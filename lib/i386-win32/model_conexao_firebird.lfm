@@ -1,0 +1,14 @@
+object ModelConexaoFirebird: TModelConexaoFirebird
+  OldCreateOrder = False
+  Height = 150
+  HorizontalOffset = 487
+  VerticalOffset = 99
+  Width = 150
+  object ConexaoFirebird: TZConnection
+    ControlsCodePage = cCP_UTF8
+    DisableSavepoints = False
+    Port = 0
+    Left = 40
+    Top = 24
+  end
+end

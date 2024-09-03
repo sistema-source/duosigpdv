@@ -1,0 +1,196 @@
+inherited ViewPrincipal: TViewPrincipal
+  Left = 389
+  Height = 662
+  Top = 171
+  Width = 1064
+  Caption = 'ViewPrincipal'
+  ClientHeight = 662
+  ClientWidth = 1064
+  OnCreate = FormCreate
+  OnResize = FormResize
+  OnShow = FormShow
+  WindowState = wsMaximized
+  object PnlBackGround: TPanel[0]
+    Left = 0
+    Height = 662
+    Top = 0
+    Width = 1064
+    Align = alClient
+    BevelOuter = bvNone
+    Caption = 'PnlBackGround'
+    ClientHeight = 662
+    ClientWidth = 1064
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -21
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentBackground = False
+    ParentFont = False
+    TabOrder = 0
+    object PnlMensagem: TPanel
+      Left = 0
+      Height = 34
+      Top = 0
+      Width = 1064
+      Align = alTop
+      Caption = 'PnlMensagem'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clWhite
+      Font.Height = -19
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ParentBackground = False
+      ParentFont = False
+      TabOrder = 0
+    end
+    object PnlEdtCodProduto: TPanel
+      Left = 0
+      Height = 50
+      Top = 42
+      Width = 1064
+      Align = alTop
+      BorderSpacing.Top = 8
+      Caption = 'PnlEdtCodProduto'
+      ParentBackground = False
+      TabOrder = 1
+    end
+    object PnlBackRodape: TPanel
+      Left = 0
+      Height = 70
+      Top = 592
+      Width = 1064
+      Align = alBottom
+      Caption = 'PnlBackRodape'
+      ClientHeight = 70
+      ClientWidth = 1064
+      ParentBackground = False
+      TabOrder = 2
+      object LblVlrTotalMercadoria: TLabel
+        Left = 496
+        Height = 68
+        Top = 1
+        Width = 559
+        Align = alRight
+        Alignment = taRightJustify
+        AutoSize = False
+        BorderSpacing.Right = 8
+        Caption = 'Total: R$ 1,00'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -37
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        Layout = tlCenter
+        ParentFont = False
+      end
+      object PnlOpcoes: TPanel
+        Left = 1
+        Height = 68
+        Top = 1
+        Width = 495
+        Align = alLeft
+        Caption = 'PnlOpcoes'
+        ClientHeight = 68
+        ClientWidth = 495
+        ParentBackground = False
+        TabOrder = 0
+        object LblOpcoes: TLabel
+          Left = 8
+          Height = 30
+          Top = 0
+          Width = 121
+          Caption = 'F1 - Opções '
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -21
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object LblConsultarProduto: TLabel
+          Left = 8
+          Height = 30
+          Top = 38
+          Width = 230
+          Caption = 'F3 - Consultar Produto '
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -21
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+        object LblEncerrarVenda: TLabel
+          Left = 256
+          Height = 30
+          Top = 0
+          Width = 190
+          Caption = 'F2 - Encerrar Venda'
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -21
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentFont = False
+          OnClick = LblEncerrarVendaClick
+        end
+        object LblRemoverProduto: TLabel
+          Left = 256
+          Height = 30
+          Top = 38
+          Width = 210
+          Caption = 'F4 -Remover Produto'
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -21
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
+      end
+    end
+    object DBGrid1: TDBGrid
+      Left = 0
+      Height = 500
+      Top = 92
+      Width = 1064
+      Align = alClient
+      Color = clWindow
+      Columns = <      
+        item
+          Title.Alignment = taCenter
+          Title.Caption = '#'
+          Width = 30
+        end      
+        item
+          Title.Alignment = taCenter
+          Title.Caption = 'Código'
+          Width = 200
+        end      
+        item
+          Title.Caption = 'Descrição'
+          Width = 500
+        end      
+        item
+          Title.Alignment = taRightJustify
+          Title.Caption = 'Qtdade'
+          Width = 80
+        end      
+        item
+          Title.Alignment = taRightJustify
+          Title.Caption = 'Vlr.Unitário'
+          Width = 150
+        end      
+        item
+          Title.Alignment = taRightJustify
+          Title.Caption = 'Vlr.Total'
+          Width = 150
+        end>
+      Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgDisableDelete, dgDisableInsert]
+      TabOrder = 3
+      TitleStyle = tsNative
+      OnKeyPress = DBGrid1KeyPress
+    end
+  end
+end

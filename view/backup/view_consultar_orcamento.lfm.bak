@@ -1,0 +1,143 @@
+inherited ViewConsultaOrcamento: TViewConsultaOrcamento
+  Height = 609
+  Top = 219
+  Width = 990
+  Caption = ''
+  ClientHeight = 609
+  ClientWidth = 990
+  object Panel4: TPanel[0]
+    Left = 0
+    Height = 609
+    Top = 0
+    Width = 990
+    Align = alClient
+    Caption = 'Panel4'
+    ClientHeight = 609
+    ClientWidth = 990
+    ParentBackground = False
+    TabOrder = 0
+    object PnlTopoConsulta: TPanel
+      Left = 1
+      Height = 79
+      Top = 1
+      Width = 988
+      Align = alTop
+      ClientHeight = 79
+      ClientWidth = 988
+      ParentBackground = False
+      TabOrder = 0
+      object Label1: TLabel
+        Left = 7
+        Height = 20
+        Top = 4
+        Width = 28
+        Caption = 'Loja'
+      end
+      object Label2: TLabel
+        Left = 80
+        Height = 20
+        Top = 8
+        Width = 51
+        Caption = 'Período'
+      end
+      object ComboBox1: TComboBox
+        Left = 8
+        Height = 28
+        Top = 32
+        Width = 56
+        ItemHeight = 20
+        TabOrder = 0
+        Text = 'ComboBox1'
+      end
+      object DateEdit1: TDateEdit
+        Left = 86
+        Height = 28
+        Top = 32
+        Width = 178
+        CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+        DateOrder = doNone
+        ButtonWidth = 23
+        NumGlyphs = 1
+        MaxLength = 0
+        TabOrder = 1
+        Text = 'DateEdit1'
+      end
+      object DateEdit2: TDateEdit
+        Left = 288
+        Height = 28
+        Top = 32
+        Width = 178
+        CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+        DateOrder = doNone
+        ButtonWidth = 23
+        NumGlyphs = 1
+        MaxLength = 0
+        TabOrder = 2
+        Text = 'DateEdit2'
+      end
+      object ShpBtnPesquisar: TShape
+        Left = 480
+        Height = 33
+        Top = 27
+        Width = 65
+        Shape = stRoundRect
+      end
+      object SpdBtnPesquisar: TSpeedButton
+        Left = 481
+        Height = 33
+        Top = 27
+        Width = 63
+        Flat = True
+        Images = LibImagem.ImageList24
+        ImageIndex = 3
+      end
+    end
+    object Panel3: TPanel
+      Left = 1
+      Height = 478
+      Top = 80
+      Width = 988
+      Align = alClient
+      Caption = 'Panel3'
+      ClientHeight = 478
+      ClientWidth = 988
+      ParentBackground = False
+      TabOrder = 1
+      object DBGrid1: TDBGrid
+        Left = 1
+        Height = 476
+        Top = 1
+        Width = 986
+        Align = alClient
+        Color = clWindow
+        Columns = <        
+          item
+            Title.Caption = 'Num.Orçamento'
+          end        
+          item
+            Title.Caption = 'Cod.Cliente'
+          end        
+          item
+            Title.Caption = 'Nome Cliente'
+          end        
+          item
+            Title.Caption = 'Dt.Venda'
+          end        
+          item
+            Title.Caption = 'Vlr.Venda'
+          end>
+        TabOrder = 0
+      end
+    end
+    object Panel1: TPanel
+      Left = 1
+      Height = 50
+      Top = 558
+      Width = 988
+      Align = alBottom
+      Caption = 'Panel1'
+      ParentBackground = False
+      TabOrder = 2
+    end
+  end
+end

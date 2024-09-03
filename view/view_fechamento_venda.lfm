@@ -1,0 +1,347 @@
+inherited ViewFechamentoVenda: TViewFechamentoVenda
+  Left = 548
+  Height = 511
+  Top = 158
+  Width = 964
+  ClientHeight = 511
+  ClientWidth = 964
+  Position = poOwnerFormCenter
+  object PnlBackFechamentoVenda: TPanel[0]
+    Left = 0
+    Height = 511
+    Top = 0
+    Width = 964
+    Align = alClient
+    ClientHeight = 511
+    ClientWidth = 964
+    Color = clBlue
+    ParentBackground = False
+    ParentColor = False
+    TabOrder = 0
+    object Panel1: TPanel
+      Left = 9
+      Height = 493
+      Top = 9
+      Width = 946
+      Align = alClient
+      BorderSpacing.Around = 8
+      ClientHeight = 493
+      ClientWidth = 946
+      Color = clWhite
+      Font.CharSet = ANSI_CHARSET
+      Font.Height = -19
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ParentBackground = False
+      ParentColor = False
+      ParentFont = False
+      TabOrder = 0
+      object GroupBox2: TGroupBox
+        Left = 568
+        Height = 441
+        Top = 1
+        Width = 360
+        Align = alLeft
+        Caption = '  RESUMO DA VENDA   '
+        ClientHeight = 411
+        ClientWidth = 356
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -19
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentBackground = False
+        ParentFont = False
+        TabOrder = 0
+        object LblVlrTotalVenda: TLabel
+          Left = 46
+          Height = 25
+          Top = 20
+          Width = 124
+          Caption = 'Total da Venda'
+          Color = 15197667
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -19
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+        end
+        object LblVlrAcrescimo: TLabel
+          Left = 75
+          Height = 25
+          Top = 73
+          Width = 95
+          Caption = 'Acréscimos'
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -19
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentFont = False
+        end
+        object LblVlrDesconto: TLabel
+          Left = 83
+          Height = 25
+          Top = 126
+          Width = 87
+          Caption = 'Descontos'
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -19
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentFont = False
+        end
+        object LblVlrTotalReceber: TLabel
+          Left = 43
+          Height = 25
+          Top = 176
+          Width = 127
+          Caption = 'Total a Receber'
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -19
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentFont = False
+        end
+        object LblVlrRecebido: TLabel
+          Left = 44
+          Height = 25
+          Top = 231
+          Width = 126
+          Caption = 'Valor Recebido'
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -19
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentFont = False
+        end
+        object LblVlrSaldo: TLabel
+          Left = 123
+          Height = 25
+          Top = 284
+          Width = 47
+          Caption = 'Saldo'
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -19
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentFont = False
+        end
+        object LblVlrTroco: TLabel
+          Left = 124
+          Height = 25
+          Top = 337
+          Width = 46
+          Caption = 'Troco'
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -19
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentFont = False
+        end
+        object EdtVlrTotalVenda: TRxDBCurrEdit
+          Left = 173
+          Height = 33
+          Top = 16
+          Width = 160
+          Alignment = taRightJustify
+          TabOrder = 0
+        end
+        object EdtVlrAcrescimos: TRxDBCurrEdit
+          Left = 173
+          Height = 33
+          Top = 69
+          Width = 160
+          Alignment = taRightJustify
+          TabOrder = 1
+        end
+        object EdtVlrDescontos: TRxDBCurrEdit
+          Left = 173
+          Height = 33
+          Top = 122
+          Width = 160
+          Alignment = taRightJustify
+          TabOrder = 2
+        end
+        object EdtVlrTotalReceber: TRxDBCurrEdit
+          Left = 173
+          Height = 33
+          Top = 175
+          Width = 160
+          Alignment = taRightJustify
+          TabOrder = 3
+        end
+        object EdtVlrTotalRecebido: TRxDBCurrEdit
+          Left = 173
+          Height = 33
+          Top = 228
+          Width = 160
+          Alignment = taRightJustify
+          TabOrder = 4
+        end
+        object EdtVlrSaldo: TRxDBCurrEdit
+          Left = 173
+          Height = 33
+          Top = 281
+          Width = 160
+          Alignment = taRightJustify
+          TabOrder = 5
+        end
+        object EdtVlrTroco: TRxDBCurrEdit
+          Left = 173
+          Height = 33
+          Top = 334
+          Width = 160
+          Alignment = taRightJustify
+          TabOrder = 6
+        end
+      end
+      object Panel2: TPanel
+        Left = 1
+        Height = 50
+        Top = 442
+        Width = 944
+        Align = alBottom
+        ClientHeight = 50
+        ClientWidth = 944
+        ParentBackground = False
+        TabOrder = 1
+        object ShpBotaoInserirFormaPagto1: TShape
+          Left = 8
+          Height = 33
+          Top = 8
+          Width = 121
+          Brush.Color = clBlue
+          Shape = stRoundRect
+        end
+        object SpdBtnVoltar: TSpeedButton
+          Left = 8
+          Height = 29
+          Top = 10
+          Width = 121
+          Alignment = taLeftJustify
+          Caption = 'Voltar'
+          Flat = True
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -19
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          Font.Style = [fsBold]
+          Images = LibImagem.ImageList24
+          ImageIndex = 2
+          OnClick = SpdBtnVoltarClick
+          ParentFont = False
+        end
+      end
+      object Panel3: TPanel
+        Left = 1
+        Height = 441
+        Top = 1
+        Width = 567
+        Align = alLeft
+        Caption = 'Panel3'
+        ClientHeight = 441
+        ClientWidth = 567
+        ParentBackground = False
+        TabOrder = 2
+        object CmbBxFormaPagto: TGroupBox
+          Left = 1
+          Height = 88
+          Top = 0
+          Width = 567
+          Caption = '  FORMA DE PAGTO E VALOR RECEBIDO '
+          ClientHeight = 58
+          ClientWidth = 563
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -19
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentBackground = False
+          ParentFont = False
+          TabOrder = 0
+          object EdtVlrLancamento: TCurrencyEdit
+            Left = 304
+            Height = 33
+            Top = -2
+            Width = 176
+            Alignment = taRightJustify
+            TabOrder = 0
+          end
+          object ComboBox1: TComboBox
+            Left = 8
+            Height = 33
+            Top = 0
+            Width = 288
+            AutoSize = False
+            Font.CharSet = ANSI_CHARSET
+            Font.Height = -19
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            ItemHeight = 25
+            ItemIndex = 0
+            Items.Strings = (
+              'Dinheiro'
+              'Cheque'
+              'Crédito'
+              'Débito'
+              'Carteira Digital'
+              'Pix'
+            )
+            ParentFont = False
+            Style = csDropDownList
+            TabOrder = 1
+            Text = 'Dinheiro'
+          end
+          object ShpBotaoInserirFormaPagto: TShape
+            Left = 488
+            Height = 33
+            Top = -3
+            Width = 65
+            Brush.Color = clBlue
+            Shape = stRoundRect
+          end
+          object SpedBtnInserirFormaPagto: TSpeedButton
+            Left = 490
+            Height = 33
+            Top = -3
+            Width = 62
+            Flat = True
+            Images = LibImagem.ImageList24
+            ImageIndex = 1
+          end
+        end
+        object GroupBox3: TGroupBox
+          Left = 1
+          Height = 376
+          Top = 64
+          Width = 569
+          Caption = '  VALORES INFORMADOS  '
+          ClientHeight = 346
+          ClientWidth = 565
+          ParentBackground = False
+          TabOrder = 1
+          object DBGrid1: TDBGrid
+            Left = 0
+            Height = 346
+            Top = 0
+            Width = 565
+            Align = alClient
+            Color = clWindow
+            Columns = <            
+              item
+                Title.Alignment = taCenter
+                Title.Caption = 'Forma de Pagto'
+                Width = 380
+              end            
+              item
+                Title.Caption = 'Valor'
+                Width = 150
+              end>
+            Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgDisableDelete, dgDisableInsert]
+            TabOrder = 0
+            TitleStyle = tsNative
+          end
+        end
+      end
+    end
+  end
+end

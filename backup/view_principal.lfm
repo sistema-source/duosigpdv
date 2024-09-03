@@ -1,0 +1,8 @@
+object ViewPrincipal: TViewPrincipal
+  Left = 552
+  Height = 240
+  Top = 207
+  Width = 320
+  Caption = 'ViewPrincipal'
+  LCLVersion = '3.4.0.0'
+end

@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="12"/>
+    <BuildModes Active="Default"/>
+    <Units>
+      <Unit>
+        <Filename Value="duosigpdv.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="122" Y="5"/>
+        <UsageCount Value="206"/>
+      </Unit>
+      <Unit>
+        <Filename Value="view_principal.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ViewPrincipal"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <TopLine Value="91"/>
+        <CursorPos X="12" Y="95"/>
+        <UsageCount Value="206"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\Biblioteca\conexao_sqllite.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ConexaoSQLIte"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="10"/>
+        <CursorPos X="58" Y="52"/>
+        <UsageCount Value="206"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\Biblioteca\model_conexao_sqlite.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ModelConexaoSqlite"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="120" Y="18"/>
+        <UsageCount Value="206"/>
+      </Unit>
+      <Unit>
+        <Filename Value="tabela\tabela_cabecalho.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="23" Y="29"/>
+        <UsageCount Value="206"/>
+      </Unit>
+      <Unit>
+        <Filename Value="tabela\tabela_interface.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="24" Y="9"/>
+        <UsageCount Value="206"/>
+      </Unit>
+      <Unit>
+        <Filename Value="tabela\tabela_pai.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="75" Y="13"/>
+        <UsageCount Value="206"/>
+      </Unit>
+      <Unit>
+        <Filename Value="tabela\tabelas.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="4"/>
+        <CursorPos X="42" Y="13"/>
+        <UsageCount Value="206"/>
+      </Unit>
+      <Unit>
+        <Filename Value="view\view_pai.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ViewPai"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="9"/>
+        <CursorPos X="3" Y="40"/>
+        <UsageCount Value="205"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\Biblioteca\lib_cores.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="81"/>
+        <CursorPos X="5" Y="115"/>
+        <UsageCount Value="72"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="view\view_fechamento_venda.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ViewFechamentoVenda"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="40"/>
+        <CursorPos X="88" Y="68"/>
+        <UsageCount Value="67"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\Biblioteca\lib_imagelist.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="LibImagem"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="5"/>
+        <CursorPos X="123" Y="12"/>
+        <UsageCount Value="67"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\temp\lazdemos_gsl-main\lazdemos_gsl-main\lazdemo_imagelist\dm.principal.pas"/>
+        <ComponentName Value="DataModule1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="6"/>
+        <CursorPos X="142" Y="7"/>
+        <UsageCount Value="34"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="view\view_consultar_orcamento.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ViewConsultaOrcamento"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="3"/>
+        <CursorPos X="52" Y="5"/>
+        <UsageCount Value="56"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\Biblioteca\model_conexao_firebird.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ModelConexaoFirebird"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="32"/>
+        <CursorPos X="74" Y="63"/>
+        <UsageCount Value="24"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+    </Units>
+    <JumpHistory HistoryIndex="29">
+      <Position>
+        <Filename Value="view\view_fechamento_venda.pas"/>
+        <Caret Line="67" Column="40" TopLine="48"/>
+      </Position>
+      <Position>
+        <Filename Value="..\Biblioteca\lib_cores.pas"/>
+        <Caret Line="98" Column="34" TopLine="72"/>
+      </Position>
+      <Position>
+        <Filename Value="view\view_fechamento_venda.pas"/>
+        <Caret Line="15" Column="54"/>
+      </Position>
+      <Position>
+        <Filename Value="view\view_fechamento_venda.pas"/>
+      </Position>
+      <Position>
+        <Filename Value="view\view_fechamento_venda.pas"/>
+        <Caret Line="41" Column="10" TopLine="13"/>
+      </Position>
+      <Position>
+        <Filename Value="view\view_fechamento_venda.pas"/>
+        <Caret Line="42" Column="10" TopLine="14"/>
+      </Position>
+      <Position>
+        <Filename Value="view\view_consultar_orcamento.pas"/>
+        <Caret Line="26" Column="35" TopLine="10"/>
+      </Position>
+      <Position>
+        <Filename Value="view\view_consultar_orcamento.pas"/>
+        <Caret Line="31" Column="54" TopLine="19"/>
+      </Position>
+      <Position>
+        <Filename Value="view\view_consultar_orcamento.pas"/>
+        <Caret Line="50" Column="18" TopLine="21"/>
+      </Position>
+      <Position>
+        <Filename Value="view\view_consultar_orcamento.pas"/>
+        <Caret Line="44" Column="58" TopLine="21"/>
+      </Position>
+      <Position>
+        <Filename Value="view_principal.pas"/>
+        <Caret Line="121" Column="76" TopLine="105"/>
+      </Position>
+      <Position>
+        <Filename Value="view_principal.pas"/>
+        <Caret Line="90" TopLine="88"/>
+      </Position>
+      <Position>
+        <Filename Value="view_principal.pas"/>
+        <Caret Line="6" Column="18"/>
+      </Position>
+      <Position>
+        <Filename Value="view_principal.pas"/>
+        <Caret Line="73" Column="3" TopLine="71"/>
+      </Position>
+      <Position>
+        <Filename Value="view_principal.pas"/>
+        <Caret Line="96" Column="19" TopLine="71"/>
+      </Position>
+      <Position>
+        <Filename Value="view_principal.pas"/>
+        <Caret Line="11" Column="13"/>
+      </Position>
+      <Position>
+        <Filename Value="view\view_fechamento_venda.pas"/>
+        <Caret Line="70" TopLine="40"/>
+      </Position>
+      <Position>
+        <Filename Value="..\Biblioteca\model_conexao_firebird.pas"/>
+        <Caret Line="7" Column="45"/>
+      </Position>
+      <Position>
+        <Filename Value="..\Biblioteca\model_conexao_firebird.pas"/>
+        <Caret Line="18" Column="34"/>
+      </Position>
+      <Position>
+        <Filename Value="..\Biblioteca\model_conexao_firebird.pas"/>
+        <Caret Line="22" Column="17"/>
+      </Position>
+      <Position>
+        <Filename Value="..\Biblioteca\model_conexao_firebird.pas"/>
+        <Caret Line="40" Column="21" TopLine="13"/>
+      </Position>
+      <Position>
+        <Filename Value="view_principal.pas"/>
+        <Caret Line="29" Column="42" TopLine="6"/>
+      </Position>
+      <Position>
+        <Filename Value="view_principal.pas"/>
+        <Caret Line="39" Column="19" TopLine="25"/>
+      </Position>
+      <Position>
+        <Filename Value="view_principal.pas"/>
+        <Caret Line="124" Column="21" TopLine="117"/>
+      </Position>
+      <Position>
+        <Filename Value="view_principal.pas"/>
+      </Position>
+      <Position>
+        <Filename Value="view_principal.pas"/>
+        <Caret Line="35" Column="23" TopLine="7"/>
+      </Position>
+      <Position>
+        <Filename Value="view_principal.pas"/>
+        <Caret Line="95" Column="12" TopLine="91"/>
+      </Position>
+      <Position>
+        <Filename Value="..\Biblioteca\model_conexao_firebird.pas"/>
+        <Caret Line="42" Column="18" TopLine="18"/>
+      </Position>
+      <Position>
+        <Filename Value="..\Biblioteca\model_conexao_firebird.pas"/>
+        <Caret Line="41" Column="82" TopLine="19"/>
+      </Position>
+      <Position>
+        <Filename Value="..\Biblioteca\model_conexao_firebird.pas"/>
+        <Caret Line="36" Column="62" TopLine="24"/>
+      </Position>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>

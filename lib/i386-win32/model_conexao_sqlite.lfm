@@ -1,0 +1,15 @@
+object ModelConexaoSqlite: TModelConexaoSqlite
+  OldCreateOrder = False
+  Height = 150
+  HorizontalOffset = 640
+  VerticalOffset = 250
+  Width = 141
+  object Conexao: TZConnection
+    ControlsCodePage = cCP_UTF8
+    DisableSavepoints = False
+    Port = 0
+    Protocol = 'sqlite'
+    Left = 32
+    Top = 16
+  end
+end
