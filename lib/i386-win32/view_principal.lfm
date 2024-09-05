@@ -193,4 +193,8 @@ inherited ViewPrincipal: TViewPrincipal
       OnKeyPress = DBGrid1KeyPress
     end
   end
+  object DataSource1: TDataSource[1]
+    Left = 8
+    Top = 8
+  end
 end

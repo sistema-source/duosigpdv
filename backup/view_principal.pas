@@ -6,6 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, ExtCtrls, DBGrids, tabelas,
+  conexao_sqllite,
   view_pai,
   view_fechamento_venda,
   view_consultar_orcamento,
@@ -121,7 +122,7 @@ var
 
 begin
      t := TModelConexaoFirebird.Create(self);
-     t.;
+     t.ConectarBanco;
 
 end;
 

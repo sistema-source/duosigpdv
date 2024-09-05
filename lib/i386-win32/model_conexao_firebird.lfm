@@ -1,4 +1,5 @@
 object ModelConexaoFirebird: TModelConexaoFirebird
+  OnCreate = DataModuleCreate
   OldCreateOrder = False
   Height = 150
   HorizontalOffset = 487
@@ -6,8 +7,14 @@ object ModelConexaoFirebird: TModelConexaoFirebird
   Width = 150
   object ConexaoFirebird: TZConnection
     ControlsCodePage = cCP_UTF8
+    ClientCodepage = 'WIN1252'
+    Properties.Strings = (
+      'codepage=WIN1252'
+    )
+    AutoCommit = False
     DisableSavepoints = False
     Port = 0
+    Protocol = 'firebird'
     Left = 40
     Top = 24
   end

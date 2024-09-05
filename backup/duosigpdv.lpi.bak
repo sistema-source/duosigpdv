@@ -26,6 +26,9 @@
     </RunParams>
     <RequiredPackages>
       <Item>
+        <PackageName Value="FCL"/>
+      </Item>
+      <Item>
         <PackageName Value="zcomponentdesign"/>
       </Item>
       <Item>
@@ -122,6 +125,21 @@
         <Filename Value="..\Biblioteca\model_conexao_firebird.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="ModelConexaoFirebird"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit>
+      <Unit>
+        <Filename Value="model\model_loja.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ModelDmLoja"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit>
+      <Unit>
+        <Filename Value="model\model_orcamento.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ModelDmOrcamento"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
       </Unit>
     </Units>
@@ -134,12 +152,13 @@
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
-      <OtherUnitFiles Value="..\ArquivosCompartilhados\sqlIte;tabela;view;biblioteca;..\Biblioteca"/>
+      <OtherUnitFiles Value="..\ArquivosCompartilhados\sqlIte;tabela;view;biblioteca;..\Biblioteca;model"/>
       <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
     <Linking>
       <Debugging>
         <DebugInfoType Value="dsDwarf3"/>
+        <UseHeaptrc Value="True"/>
       </Debugging>
       <Options>
         <Win32>

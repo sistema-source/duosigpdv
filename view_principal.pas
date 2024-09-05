@@ -6,17 +6,19 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, ExtCtrls, DBGrids, tabelas,
+  conexao_sqllite,
   view_pai,
   view_fechamento_venda,
   view_consultar_orcamento,
   model_conexao_firebird,
-  lib_cores;
+  lib_cores, DB;
 
 type
 
   { TViewPrincipal }
 
   TViewPrincipal = class(TViewPai)
+    DataSource1: TDataSource;
     DBGrid1: TDBGrid;
     LblOpcoes: TLabel;
     LblConsultarProduto: TLabel;
@@ -92,7 +94,6 @@ procedure TViewPrincipal.FormShow(Sender: TObject);
 var
   v: TViewConsultaOrcamento;
 begin
-     Teste;
   v := TViewConsultaOrcamento.Create(self);
   try
     v.ShowModal;

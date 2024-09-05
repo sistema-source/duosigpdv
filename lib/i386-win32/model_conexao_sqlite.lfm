@@ -9,7 +9,7 @@ object ModelConexaoSqlite: TModelConexaoSqlite
     DisableSavepoints = False
     Port = 0
     Protocol = 'sqlite'
-    Left = 32
-    Top = 16
+    Left = 56
+    Top = 48
   end
 end
