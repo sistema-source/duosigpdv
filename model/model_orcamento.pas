@@ -15,18 +15,22 @@ type
 
   TModelDmOrcamento = class(TDataModule)
     QryPesquisaOrcamento: TZQuery;
-    procedure DataModuleCreate(Sender: TObject);
-    procedure DataModuleDestroy(Sender: TObject);
   private
     FModelConexaoFirebird: TModelConexaoFirebird;
+    procedure SetModelConexaoFirebird(AValue: TModelConexaoFirebird);
   public
-    function ObterListaOrcamento(pDtSrc: TDataSource; pCodLoja: string; pDtInicial, pDtFinal: TDate): boolean;
+    function ObterListaOrcamento(pDtSrc: TDataSource; pCodLoja: string;
+      pDtInicial, pDtFinal: TDate; pNomeCliente: string): boolean;
+
+
+      property ModelConexaoFirebird : TModelConexaoFirebird read FModelConexaoFirebird write SetModelConexaoFirebird;
   end;
 
   { TModelDmOrcamento }
-  IModelOrcamento = interface
-    ['{8B1953B4-0231-4B4A-A70B-268F287DF182}']
-    function ObterListaOrcamento(pDtSrc: TDataSource; pCodLoja: string; pDtInicial, pDtFinal: TDate): boolean;
+  IModelOrcamento = interface             // guid ok
+['{30ECCB7C-CE15-4292-9885-2CA8201FC0CA}']
+    function ObterListaOrcamento(pDtSrc: TDataSource; pCodLoja: string;
+      pDtInicial, pDtFinal: TDate; pNomeCliente: string): boolean;
   end;
 
   { TModelOrcamento }
@@ -37,7 +41,8 @@ type
     constructor Create;
     destructor Destroy; override;
     class function New: IModelOrcamento;
-    function ObterListaOrcamento(pDtSrc: TDataSource; pCodLoja: string; pDtInicial, pDtFinal: TDate): boolean;
+    function ObterListaOrcamento(pDtSrc: TDataSource; pCodLoja: string;
+      pDtInicial, pDtFinal: TDate; pNomeCliente: string): boolean;
   end;
 
 
@@ -48,18 +53,17 @@ implementation
 
 {$R *.lfm}
 
-procedure TModelDmOrcamento.DataModuleCreate(Sender: TObject);
+procedure TModelDmOrcamento.SetModelConexaoFirebird(AValue: TModelConexaoFirebird);
 begin
-  FModelConexaoFirebird := TModelConexaoFirebird.Create(nil);
-end;
+  if FModelConexaoFirebird=AValue then Exit;
+  FModelConexaoFirebird:=AValue;
 
-procedure TModelDmOrcamento.DataModuleDestroy(Sender: TObject);
-begin
-  FreeAndNil(FModelConexaoFirebird);
+  QryPesquisaOrcamento.Connection := FModelConexaoFirebird.ConexaoFirebird;
 end;
 
 { TModelDmOrcamento }
-function TModelDmOrcamento.ObterListaOrcamento(pDtSrc: TDataSource; pCodLoja: string; pDtInicial, pDtFinal: TDate): boolean;
+function TModelDmOrcamento.ObterListaOrcamento(pDtSrc: TDataSource;
+  pCodLoja: string; pDtInicial, pDtFinal: TDate; pNomeCliente: string): boolean;
 var
   s: string;
 begin
@@ -68,23 +72,30 @@ begin
   s := s + ' select ';
   s := s + ' s052.codlja, ';
   s := s + ' s052.numorc, ';
-    s := s + ' s052.codcli, ';
+  s := s + ' s052.codcli, ';
 
   s := s + ' s052.dtaorc, ';
   s := s + ' coalesce(s052.nomcli, s019.nomcli) as nomcli, ';
   s := s + ' s052.vlrtotorc ';
   s := s + ' from sinaf052 s052 ';
   s := s + ' left join sinaf019 s019 on s019.codcli = s052.codcli ';
-  s := s + ' where s052.codlja = :codlja and s052.dtaorc >= :dt_inicial and s052.dtaorc <= :dt_final ';
+  s := s + ' where s052.codlja = :pCodlja and s052.dtaorc >= :pDt_inicial and s052.dtaorc <= :pDt_final ';
+
+  if pNomeCliente <> '' then
+    s := s + ' and s052.nomcli like :pNomeCliente';
+
   s := s + ' order by s052.codlja, s052.numorc descending ';
 
   QryPesquisaOrcamento.Connection := FModelConexaoFirebird.ConexaoFirebird;
   QryPesquisaOrcamento.SQL.Text := s;
 
-  QryPesquisaOrcamento.ParamByName('codlja').AsString := pCodLoja;
-  QryPesquisaOrcamento.ParamByName('dt_inicial').AsDate := pDtInicial;
-  QryPesquisaOrcamento.ParamByName('dt_final').AsDate := pDtFinal;
+  QryPesquisaOrcamento.ParamByName('pCodlja').AsString := pCodLoja;
+  QryPesquisaOrcamento.ParamByName('pDt_inicial').AsDate := pDtInicial;
+  QryPesquisaOrcamento.ParamByName('pDt_final').AsDate := pDtFinal;
+  if pNomeCliente <> '' then
+    QryPesquisaOrcamento.ParamByName('pNomeCliente').AsString := pNomeCliente + '%';
   QryPesquisaOrcamento.Open;
+  TNumericField(QryPesquisaOrcamento.FieldbyName('vlrtotorc')).DisplayFormat:= '###,###,###,##0.00';
   pDtSrc.DataSet := QryPesquisaOrcamento;
 end;
 
@@ -106,9 +117,11 @@ begin
   Result := Self.Create;
 end;
 
-function TModelOrcamento.ObterListaOrcamento(pDtSrc: TDataSource; pCodLoja: string; pDtInicial, pDtFinal: TDate): boolean;
+function TModelOrcamento.ObterListaOrcamento(pDtSrc: TDataSource;
+  pCodLoja: string; pDtInicial, pDtFinal: TDate; pNomeCliente: string): boolean;
 begin
-  FModelDmOrcamento.ObterListaOrcamento(pDtSrc, pCodLoja, pDtInicial, pDtFinal);
+  FModelDmOrcamento.ObterListaOrcamento(pDtSrc, pCodLoja, pDtInicial,
+    pDtFinal, pNomeCliente);
 end;
 
 end.

@@ -1,0 +1,198 @@
+object JKFormDialog: TJKFormDialog
+  Left = 313
+  Height = 261
+  Top = 176
+  Width = 541
+  Caption = 'JKFormDialog'
+  ClientHeight = 261
+  ClientWidth = 541
+  KeyPreview = True
+  OnKeyDown = FormKeyDown
+  OnShow = FormShow
+  LCLVersion = '2.2.6.0'
+  object pTexto: TPanel
+    Left = 0
+    Height = 163
+    Top = 49
+    Width = 541
+    Align = alClient
+    ClientHeight = 163
+    ClientWidth = 541
+    TabOrder = 0
+    object imgDialog: TImage
+      Cursor = crHandPoint
+      Left = 1
+      Height = 161
+      Top = 1
+      Width = 70
+      Align = alLeft
+      Center = True
+      Transparent = True
+    end
+    object ScrollBox1: TScrollBox
+      Left = 71
+      Height = 161
+      Top = 1
+      Width = 469
+      HorzScrollBar.Page = 447
+      VertScrollBar.Page = 57
+      Align = alClient
+      ClientHeight = 157
+      ClientWidth = 465
+      TabOrder = 0
+      object lTexto: TLabel
+        Left = 5
+        Height = 140
+        Top = 0
+        Width = 451
+        Alignment = taCenter
+        Anchors = [akTop, akLeft, akRight, akBottom]
+        AutoSize = False
+        BorderSpacing.Left = 5
+        Caption = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eleifend aliquam dui eget consequat. In pellentesque laoreet justo, id ullamcorper velit ultrices sed.'
+        Color = clWhite
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = 14397732
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Layout = tlCenter
+        ParentColor = False
+        ParentFont = False
+        PopupMenu = PopupMenu1
+        Transparent = False
+        WordWrap = True
+      end
+    end
+  end
+  object pTopo: TPanel
+    Left = 0
+    Height = 49
+    Top = 0
+    Width = 541
+    Align = alTop
+    Caption = 'Mensagem do Topo'
+    Color = clNone
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWhite
+    Font.Height = -16
+    Font.Name = 'Segoe UI'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentBackground = False
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 1
+  end
+  object pBotton: TPanel
+    Left = 0
+    Height = 49
+    Top = 212
+    Width = 541
+    Align = alBottom
+    ClientHeight = 49
+    ClientWidth = 541
+    Color = clWhite
+    ParentColor = False
+    TabOrder = 2
+    object pYes: TPanel
+      Left = 436
+      Height = 47
+      Top = 1
+      Width = 96
+      Align = alRight
+      BorderSpacing.Right = 8
+      BevelOuter = bvNone
+      Caption = 'pYes'
+      ClientHeight = 47
+      ClientWidth = 96
+      TabOrder = 0
+      object shYes: TShape
+        Left = 0
+        Height = 47
+        Top = 0
+        Width = 96
+        Align = alClient
+        Brush.Color = 14397732
+        Pen.Color = 14397732
+        Shape = stRoundRect
+      end
+      object lYes: TLabel
+        Cursor = crHandPoint
+        Left = 0
+        Height = 47
+        Top = 0
+        Width = 96
+        Align = alClient
+        Alignment = taCenter
+        AutoSize = False
+        Caption = 'Sim'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clWhite
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        Layout = tlCenter
+        ParentColor = False
+        ParentFont = False
+        OnClick = lYesClick
+      end
+    end
+    object pNo: TPanel
+      Left = 332
+      Height = 47
+      Top = 1
+      Width = 96
+      Align = alRight
+      BorderSpacing.Right = 8
+      BevelOuter = bvNone
+      Caption = 'pNo'
+      ClientHeight = 47
+      ClientWidth = 96
+      TabOrder = 1
+      object shNo: TShape
+        Left = 0
+        Height = 47
+        Top = 0
+        Width = 96
+        Align = alClient
+        Pen.Color = 14397732
+        Shape = stRoundRect
+      end
+      object lNo: TLabel
+        Cursor = crHandPoint
+        Left = 0
+        Height = 47
+        Top = 0
+        Width = 96
+        Align = alClient
+        Alignment = taCenter
+        AutoSize = False
+        Caption = 'Não'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = 14397732
+        Font.Height = -16
+        Font.Name = 'Tahoma'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        Layout = tlCenter
+        ParentColor = False
+        ParentFont = False
+        OnClick = lNoClick
+      end
+    end
+  end
+  object PopupMenu1: TPopupMenu
+    Left = 164
+    Top = 4
+    object MenuItem1: TMenuItem
+      Caption = 'Copiar Mensagem'
+      OnClick = MenuItem1Click
+    end
+  end
+end

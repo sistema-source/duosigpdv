@@ -1,0 +1,6 @@
+inherited ViewMensagemCarregarDadosOrcamento: TViewMensagemCarregarDadosOrcamento
+  Left = 564
+  Top = 363
+  Width = 585
+  Position = poOwnerFormCenter
+end

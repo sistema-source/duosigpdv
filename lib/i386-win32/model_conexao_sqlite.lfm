@@ -1,15 +1,19 @@
 object ModelConexaoSqlite: TModelConexaoSqlite
+  OnCreate = DataModuleCreate
   OldCreateOrder = False
   Height = 150
   HorizontalOffset = 640
   VerticalOffset = 250
-  Width = 141
+  Width = 430
   object Conexao: TZConnection
     ControlsCodePage = cCP_UTF8
-    DisableSavepoints = False
+    AutoEncodeStrings = True
+    Properties.Strings = (
+      'AutoEncodeStrings=ON'
+    )
     Port = 0
     Protocol = 'sqlite'
-    Left = 56
-    Top = 48
+    Left = 40
+    Top = 24
   end
 end

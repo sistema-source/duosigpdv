@@ -4,18 +4,18 @@ object ModelConexaoFirebird: TModelConexaoFirebird
   Height = 150
   HorizontalOffset = 487
   VerticalOffset = 99
-  Width = 150
+  Width = 396
   object ConexaoFirebird: TZConnection
     ControlsCodePage = cCP_UTF8
+    AutoEncodeStrings = True
     ClientCodepage = 'WIN1252'
     Properties.Strings = (
       'codepage=WIN1252'
     )
     AutoCommit = False
-    DisableSavepoints = False
     Port = 0
     Protocol = 'firebird'
-    Left = 40
-    Top = 24
+    Left = 136
+    Top = 64
   end
 end

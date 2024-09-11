@@ -9,7 +9,7 @@
         <Filename Value="duosigpdv.lpr"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <CursorPos X="49" Y="23"/>
+        <CursorPos X="98" Y="8"/>
         <UsageCount Value="206"/>
       </Unit>
       <Unit>
@@ -18,12 +18,11 @@
         <ComponentName Value="ViewPrincipal"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <TopLine Value="64"/>
-        <CursorPos X="18" Y="101"/>
-        <FoldState Value=" T3iQ0401113 PiIiH0S"/>
+        <EditorIndex Value="-1"/>
         <UsageCount Value="206"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
+        <Bookmarks Count="1">
+          <Item0 Y="212" ID="1"/>
+        </Bookmarks>
       </Unit>
       <Unit>
         <Filename Value="..\Biblioteca\conexao_sqllite.pas"/>
@@ -32,8 +31,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
         <EditorIndex Value="-1"/>
-        <CursorPos X="40" Y="19"/>
-        <FoldState Value=" T3i00Q^"/>
+        <TopLine Value="21"/>
+        <CursorPos Y="57"/>
         <UsageCount Value="206"/>
       </Unit>
       <Unit>
@@ -43,15 +42,15 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
         <EditorIndex Value="-1"/>
-        <CursorPos X="44" Y="14"/>
+        <CursorPos X="21" Y="36"/>
         <UsageCount Value="206"/>
       </Unit>
       <Unit>
         <Filename Value="tabela\tabela_cabecalho.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="10"/>
-        <CursorPos X="45" Y="39"/>
+        <TopLine Value="13"/>
+        <CursorPos X="55" Y="39"/>
         <UsageCount Value="206"/>
       </Unit>
       <Unit>
@@ -65,15 +64,16 @@
         <Filename Value="tabela\tabela_pai.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <CursorPos X="15" Y="13"/>
+        <TopLine Value="60"/>
+        <CursorPos X="81" Y="72"/>
         <UsageCount Value="206"/>
       </Unit>
       <Unit>
         <Filename Value="tabela\tabelas.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="4"/>
-        <CursorPos X="7" Y="17"/>
+        <TopLine Value="55"/>
+        <CursorPos Y="68"/>
         <UsageCount Value="206"/>
       </Unit>
       <Unit>
@@ -83,8 +83,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="9"/>
-        <CursorPos X="3" Y="40"/>
+        <CursorPos X="71" Y="9"/>
+        <FoldState Value=" T3jJ0Kv"/>
         <UsageCount Value="205"/>
       </Unit>
       <Unit>
@@ -93,7 +93,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="81"/>
         <CursorPos X="5" Y="115"/>
-        <UsageCount Value="120"/>
+        <UsageCount Value="212"/>
       </Unit>
       <Unit>
         <Filename Value="view\view_fechamento_venda.pas"/>
@@ -101,12 +101,10 @@
         <ComponentName Value="ViewFechamentoVenda"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="3"/>
-        <TopLine Value="41"/>
-        <CursorPos X="60" Y="44"/>
-        <UsageCount Value="115"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="130"/>
+        <CursorPos Y="175"/>
+        <UsageCount Value="207"/>
       </Unit>
       <Unit>
         <Filename Value="..\Biblioteca\lib_imagelist.pas"/>
@@ -116,7 +114,7 @@
         <ResourceBaseClass Value="DataModule"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="101" Y="23"/>
-        <UsageCount Value="115"/>
+        <UsageCount Value="207"/>
       </Unit>
       <Unit>
         <Filename Value="view\view_consultar_orcamento.pas"/>
@@ -124,13 +122,10 @@
         <ComponentName Value="ViewConsultaOrcamento"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="4"/>
-        <TopLine Value="66"/>
-        <CursorPos X="166" Y="77"/>
-        <UsageCount Value="104"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="119"/>
+        <CursorPos Y="164"/>
+        <UsageCount Value="200"/>
       </Unit>
       <Unit>
         <Filename Value="..\Biblioteca\model_conexao_firebird.pas"/>
@@ -139,9 +134,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="46"/>
-        <CursorPos X="27" Y="62"/>
-        <UsageCount Value="72"/>
+        <TopLine Value="4"/>
+        <CursorPos Y="38"/>
+        <UsageCount Value="209"/>
       </Unit>
       <Unit>
         <Filename Value="model\model_loja.pas"/>
@@ -150,9 +145,222 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="61"/>
-        <CursorPos X="61" Y="79"/>
-        <UsageCount Value="67"/>
+        <TopLine Value="49"/>
+        <CursorPos X="70" Y="49"/>
+        <UsageCount Value="204"/>
+      </Unit>
+      <Unit>
+        <Filename Value="model\model_orcamento.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ModelDmOrcamento"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="64"/>
+        <CursorPos Y="98"/>
+        <UsageCount Value="201"/>
+      </Unit>
+      <Unit>
+        <Filename Value="tabela\tabela_detalhe.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="30" Y="40"/>
+        <UsageCount Value="204"/>
+      </Unit>
+      <Unit>
+        <Filename Value="model\model_produto.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ModelDmProduto"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="106"/>
+        <CursorPos Y="146"/>
+        <FoldState Value=" T7aI51 TL Hi02]93kK033^"/>
+        <UsageCount Value="202"/>
+      </Unit>
+      <Unit>
+        <Filename Value="model\model_venda.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ModelDmVenda"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="300"/>
+        <CursorPos X="3" Y="303"/>
+        <UsageCount Value="202"/>
+        <Bookmarks Count="1">
+          <Item0 X="4" Y="241" ID="8"/>
+        </Bookmarks>
+      </Unit>
+      <Unit>
+        <Filename Value="model\model_configuracao_pdv.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ModelConfiguracaoPdv"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="222"/>
+        <CursorPos X="40" Y="249"/>
+        <UsageCount Value="201"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\Biblioteca\lib_funcoes.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="28"/>
+        <CursorPos X="23" Y="73"/>
+        <UsageCount Value="200"/>
+      </Unit>
+      <Unit>
+        <Filename Value="view\view_mensagem_erro.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ViewMensagem"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="17" Y="9"/>
+        <UsageCount Value="200"/>
+      </Unit>
+      <Unit>
+        <Filename Value="view\view_blend.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ViewBlend"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="37" Y="14"/>
+        <UsageCount Value="200"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\Biblioteca\util_teclas.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="15" Y="12"/>
+        <UsageCount Value="202"/>
+      </Unit>
+      <Unit>
+        <Filename Value="tabela\tabela_forma_pagto.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="39" Y="37"/>
+        <UsageCount Value="202"/>
+      </Unit>
+      <Unit>
+        <Filename Value="view\view_consulta.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ViewConsulta"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="13"/>
+        <CursorPos Y="57"/>
+        <UsageCount Value="159"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="view\view_vendedor.pas"/>
+        <ComponentName Value="ViewVendedor"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="49" Y="17"/>
+        <UsageCount Value="19"/>
+      </Unit>
+      <Unit>
+        <Filename Value="view\view_cliente.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ViewCliente"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <TopLine Value="100"/>
+        <CursorPos X="40" Y="126"/>
+        <UsageCount Value="123"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="view\view_serie_nf.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ViewSerieNf"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="19"/>
+        <CursorPos X="25" Y="50"/>
+        <UsageCount Value="123"/>
+      </Unit>
+      <Unit>
+        <Filename Value="view\view_transporte.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ViewTransporte"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="185"/>
+        <CursorPos Y="234"/>
+        <UsageCount Value="123"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="model\model_vendedor.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ModelDmVendedor"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="72"/>
+        <CursorPos Y="118"/>
+        <UsageCount Value="122"/>
+      </Unit>
+      <Unit>
+        <Filename Value="model\model_cliente.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ModelDmCliente"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="4"/>
+        <CursorPos X="3" Y="35"/>
+        <UsageCount Value="120"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="model\model_fornecedor.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ModelDmFornecedor"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="55"/>
+        <CursorPos X="18" Y="91"/>
+        <UsageCount Value="120"/>
+      </Unit>
+      <Unit>
+        <Filename Value="view\view_opcoes.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ViewOpcoes"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="10"/>
+        <CursorPos X="36" Y="58"/>
+        <UsageCount Value="120"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="view\view_cnpj_cpf.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ViewCnpjCpf"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="92"/>
+        <CursorPos X="3" Y="103"/>
+        <UsageCount Value="120"/>
       </Unit>
       <Unit>
         <Filename Value="C:\temp\lazdemos_gsl-main\lazdemos_gsl-main\lazdemo_imagelist\dm.principal.pas"/>
@@ -161,76 +369,166 @@
         <ResourceBaseClass Value="DataModule"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="5" Y="7"/>
-        <UsageCount Value="31"/>
-      </Unit>
-      <Unit>
-        <Filename Value="model\model_orcamento.pas"/>
-        <IsPartOfProject Value="True"/>
-        <ComponentName Value="ModelDmOrcamento"/>
-        <HasResources Value="True"/>
-        <ResourceBaseClass Value="DataModule"/>
-        <EditorIndex Value="2"/>
-        <TopLine Value="64"/>
-        <CursorPos X="48" Y="69"/>
-        <UsageCount Value="64"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
+        <UsageCount Value="10"/>
       </Unit>
       <Unit>
         <Filename Value="C:\lazarus\fpc\3.2.2\source\rtl\objpas\classes\classesh.inc"/>
-        <EditorIndex Value="1"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="2137"/>
         <CursorPos X="76" Y="2150"/>
+        <UsageCount Value="12"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\Biblioteca\uJKDialog.pas"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="45" Y="8"/>
+        <UsageCount Value="4"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\Biblioteca\uformdialogs.pas"/>
+        <ComponentName Value="JKFormDialog"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uformDialogs"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="72" Y="26"/>
+        <UsageCount Value="4"/>
+      </Unit>
+      <Unit>
+        <Filename Value="view\view_vendedor.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ViewVendedor"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="55"/>
+        <CursorPos X="29" Y="81"/>
+        <UsageCount Value="115"/>
+      </Unit>
+      <Unit>
+        <Filename Value="view\view_consulta_cliente.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ViewConsultaCliente"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="45" Y="15"/>
+        <UsageCount Value="113"/>
+      </Unit>
+      <Unit>
+        <Filename Value="view\view_consulta_municipio.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ViewConsultaMunicipio"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="88" Y="26"/>
+        <UsageCount Value="113"/>
+      </Unit>
+      <Unit>
+        <Filename Value="view\view_consulta_fornecedor.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ViewConsultaFornecedor"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="42"/>
+        <CursorPos Y="93"/>
+        <UsageCount Value="113"/>
+      </Unit>
+      <Unit>
+        <Filename Value="d:\Componentes\ACBR\Fontes\ACBrDiversos\ACBrValidador.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="24"/>
+        <CursorPos X="31" Y="51"/>
+        <UsageCount Value="21"/>
+      </Unit>
+      <Unit>
+        <Filename Value="view\view_mensagem_carregar_dados.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ViewMensagemCarregarDados"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="18"/>
+        <UsageCount Value="82"/>
+      </Unit>
+      <Unit>
+        <Filename Value="view\view_login.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ViewLogin"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="98" Y="12"/>
+        <UsageCount Value="34"/>
+      </Unit>
+      <Unit>
+        <Filename Value="view\view_consulta_produto.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ViewConsultaProduto"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="23"/>
+        <CursorPos Y="52"/>
         <UsageCount Value="31"/>
-        <Loaded Value="True"/>
       </Unit>
     </Units>
-    <JumpHistory HistoryIndex="11">
+    <JumpHistory HistoryIndex="13">
       <Position>
-        <Filename Value="view_principal.pas"/>
-        <Caret Line="49" Column="50" TopLine="37"/>
+        <Filename Value="model\model_cliente.pas"/>
+        <Caret Line="20" Column="114"/>
       </Position>
       <Position>
-        <Filename Value="view_principal.pas"/>
+        <Filename Value="view\view_transporte.pas"/>
+        <Caret Line="142" Column="86" TopLine="133"/>
       </Position>
       <Position>
-        <Filename Value="view_principal.pas"/>
-        <Caret Line="17" Column="23"/>
+        <Filename Value="view\view_cliente.pas"/>
+        <Caret Line="91" Column="37" TopLine="80"/>
       </Position>
       <Position>
-        <Filename Value="view_principal.pas"/>
-        <Caret Line="35" Column="25" TopLine="7"/>
+        <Filename Value="view\view_cliente.pas"/>
+        <Caret Line="128" Column="31" TopLine="101"/>
       </Position>
       <Position>
-        <Filename Value="view_principal.pas"/>
-        <Caret Line="144" Column="58" TopLine="129"/>
+        <Filename Value="view\view_cliente.pas"/>
       </Position>
       <Position>
-        <Filename Value="view_principal.pas"/>
+        <Filename Value="view\view_opcoes.pas"/>
+        <Caret Line="96" Column="33" TopLine="80"/>
       </Position>
       <Position>
-        <Filename Value="view_principal.pas"/>
-        <Caret Line="37" Column="23" TopLine="9"/>
+        <Filename Value="view\view_opcoes.pas"/>
       </Position>
       <Position>
-        <Filename Value="view_principal.pas"/>
-        <Caret Line="97" Column="3" TopLine="93"/>
+        <Filename Value="view\view_opcoes.pas"/>
+        <Caret Line="58" Column="36" TopLine="10"/>
       </Position>
       <Position>
-        <Filename Value="model\model_orcamento.pas"/>
-        <Caret Line="81" Column="48" TopLine="53"/>
+        <Filename Value="view\view_cliente.pas"/>
+        <Caret Line="122" Column="51" TopLine="81"/>
       </Position>
       <Position>
-        <Filename Value="model\model_orcamento.pas"/>
-        <Caret Line="80" Column="17" TopLine="65"/>
+        <Filename Value="view\view_cliente.pas"/>
+        <Caret Line="107" Column="20" TopLine="81"/>
       </Position>
       <Position>
-        <Filename Value="model\model_orcamento.pas"/>
-        <Caret Line="8" Column="40"/>
+        <Filename Value="view\view_cliente.pas"/>
+        <Caret Line="9" Column="90"/>
       </Position>
       <Position>
-        <Filename Value="model\model_orcamento.pas"/>
-        <Caret Line="81" Column="50" TopLine="65"/>
+        <Filename Value="view\view_cliente.pas"/>
+        <Caret Line="118" Column="45" TopLine="92"/>
+      </Position>
+      <Position>
+        <Filename Value="view\view_cliente.pas"/>
+        <Caret Line="8" Column="80"/>
+      </Position>
+      <Position>
+        <Filename Value="view\view_consulta.pas"/>
+        <Caret Line="110" Column="17" TopLine="99"/>
       </Position>
     </JumpHistory>
     <RunParams>
@@ -238,4 +536,15 @@
       <Modes ActiveMode=""/>
     </RunParams>
   </ProjectSession>
+  <Debugging>
+    <BreakPoints>
+      <Item>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="view\view_consulta_fornecedor.pas"/>
+        <Line Value="41"/>
+      </Item>
+    </BreakPoints>
+  </Debugging>
 </CONFIG>

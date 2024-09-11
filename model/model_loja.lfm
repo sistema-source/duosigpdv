@@ -3,9 +3,9 @@ object ModelDmLoja: TModelDmLoja
   OnDestroy = DataModuleDestroy
   OldCreateOrder = False
   Height = 150
-  HorizontalOffset = 487
-  VerticalOffset = 99
-  Width = 150
+  HorizontalOffset = 488
+  VerticalOffset = 100
+  Width = 579
   object ZQuery1: TZQuery
     Params = <>
     Left = 32

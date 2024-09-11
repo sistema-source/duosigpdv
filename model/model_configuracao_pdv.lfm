@@ -1,0 +1,13 @@
+object ModelConfiguracaoPdv: TModelConfiguracaoPdv
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 238
+  HorizontalOffset = 743
+  VerticalOffset = 181
+  Width = 392
+  object QryPesquisa: TZQuery
+    Params = <>
+    Left = 48
+    Top = 16
+  end
+end

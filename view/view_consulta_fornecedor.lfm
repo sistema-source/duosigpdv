@@ -1,0 +1,51 @@
+inherited ViewConsultaFornecedor: TViewConsultaFornecedor
+  Height = 597
+  ClientHeight = 597
+  OnCreate = FormCreate
+  inherited PnlBackGround: TPanel
+    Height = 597
+    ClientHeight = 597
+    inherited Panel4: TPanel
+      Height = 579
+      ClientHeight = 579
+      inherited PnlTopoConsulta: TPanel
+        inherited CmbBxTipoPesquisa: TComboBox
+          Items.Strings = (
+            'Razão Social'
+            'Cnpj/Cpf'
+            'Código'
+          )
+          OnSelect = CmbBxTipoPesquisaSelect
+        end
+      end
+      inherited Panel3: TPanel
+        Height = 448
+        ClientHeight = 448
+        inherited DBGrdPesquisa: TDBGrid
+          Height = 446
+          Columns = <          
+            item
+              PickList.Strings = (              )
+              Title.Caption = 'Código'
+              FieldName = 'CODFRN'
+            end          
+            item
+              PickList.Strings = (              )
+              Title.Caption = 'Razão Social'
+              Width = 650
+              FieldName = 'RAZFRN'
+            end          
+            item
+              PickList.Strings = (              )
+              Title.Caption = 'Cnpj/Cpf'
+              Width = 250
+              FieldName = 'CGCFRN'
+            end>
+        end
+      end
+      inherited PnlRodape: TPanel
+        Top = 528
+      end
+    end
+  end
+end

@@ -85,7 +85,7 @@ begin
   Qry := TZReadOnlyQuery.Create(nil);
   try
     Qry.Connection := FModelConexaoFirebird.ConexaoFirebird;
-    Qry.SQL.Text := ' SELECT S018.CODLJA FROM SINAF018 S018 ' + ' WHERE S018.STAATI = :ATIVA';
+    Qry.SQL.Text := ' SELECT S018.CODLJA FROM SINAF018 S018 ' + ' WHERE S018.STAATI = :ATIVA ORDER BY S018.CODLJA ';
     Qry.ParamByName('ATIVA').AsString := 'S';
     Qry.Open;
     while not Qry.EOF do

@@ -1,0 +1,71 @@
+object ModelDmVenda: TModelDmVenda
+  OnCreate = DataModuleCreate
+  OnDestroy = DataModuleDestroy
+  OldCreateOrder = False
+  Height = 150
+  HorizontalOffset = 747
+  VerticalOffset = 243
+  Width = 626
+  object QryDetalhe: TZQuery
+    SQL.Strings = (
+      'SELECT * FROM DETALHE D WHERE D.ID_CABECALHO  = :PID_CABECALHO'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'PID_CABECALHO'
+        ParamType = ptUnknown
+      end>
+    Left = 208
+    Top = 24
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'PID_CABECALHO'
+        ParamType = ptUnknown
+      end>
+  end
+  object QryCabecalho: TZQuery
+    SQL.Strings = (
+      'SELECT * FROM CABECALHO WHERE ID = :PID'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'PID'
+        ParamType = ptUnknown
+      end>
+    Left = 40
+    Top = 24
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'PID'
+        ParamType = ptUnknown
+      end>
+  end
+  object QryFormaPagto: TZQuery
+    SQL.Strings = (
+      'SELECT * FROM FORMA_PAGTO  F WHERE F.ID_CABECALHO  = :PID_CABECALHO'
+      ''
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'PID_CABECALHO'
+        ParamType = ptUnknown
+      end>
+    Left = 368
+    Top = 24
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'PID_CABECALHO'
+        ParamType = ptUnknown
+      end>
+  end
+  object DtSrcOrcamento: TDataSource
+    Left = 48
+    Top = 96
+  end
+end

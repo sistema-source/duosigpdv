@@ -1,12 +1,13 @@
 inherited ViewPrincipal: TViewPrincipal
-  Left = 389
+  Left = 391
   Height = 662
-  Top = 171
+  Top = 153
   Width = 1064
   Caption = 'ViewPrincipal'
   ClientHeight = 662
   ClientWidth = 1064
   OnCreate = FormCreate
+  OnKeyDown = FormKeyDown
   OnResize = FormResize
   OnShow = FormShow
   WindowState = wsMaximized
@@ -37,9 +38,10 @@ inherited ViewPrincipal: TViewPrincipal
       Caption = 'PnlMensagem'
       Font.CharSet = ANSI_CHARSET
       Font.Color = clWhite
-      Font.Height = -19
+      Font.Height = -21
       Font.Pitch = fpVariable
       Font.Quality = fqDraft
+      Font.Style = [fsBold]
       ParentBackground = False
       ParentFont = False
       TabOrder = 0
@@ -52,8 +54,29 @@ inherited ViewPrincipal: TViewPrincipal
       Align = alTop
       BorderSpacing.Top = 8
       Caption = 'PnlEdtCodProduto'
+      ClientHeight = 50
+      ClientWidth = 1064
       ParentBackground = False
       TabOrder = 1
+      object EdtCodProduto: TEdit
+        Left = 11
+        Height = 48
+        Top = 1
+        Width = 1042
+        Align = alClient
+        Alignment = taCenter
+        BorderSpacing.Left = 10
+        BorderSpacing.Right = 10
+        BorderStyle = bsNone
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -27
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        OnKeyDown = EdtCodProdutoKeyDown
+        ParentFont = False
+        TabOrder = 0
+      end
     end
     object PnlBackRodape: TPanel
       Left = 0
@@ -67,32 +90,32 @@ inherited ViewPrincipal: TViewPrincipal
       ParentBackground = False
       TabOrder = 2
       object LblVlrTotalMercadoria: TLabel
-        Left = 496
+        Left = 763
         Height = 68
         Top = 1
-        Width = 559
+        Width = 100
         Align = alRight
         Alignment = taRightJustify
         AutoSize = False
         BorderSpacing.Right = 8
-        Caption = 'Total: R$ 1,00'
+        Caption = 'Total:'
         Font.CharSet = ANSI_CHARSET
         Font.Height = -37
         Font.Pitch = fpVariable
         Font.Quality = fqDraft
         Font.Style = [fsBold]
-        Layout = tlCenter
+        ParentColor = False
         ParentFont = False
       end
       object PnlOpcoes: TPanel
         Left = 1
         Height = 68
         Top = 1
-        Width = 495
+        Width = 511
         Align = alLeft
         Caption = 'PnlOpcoes'
         ClientHeight = 68
-        ClientWidth = 495
+        ClientWidth = 511
         ParentBackground = False
         TabOrder = 0
         object LblOpcoes: TLabel
@@ -106,7 +129,9 @@ inherited ViewPrincipal: TViewPrincipal
           Font.Pitch = fpVariable
           Font.Quality = fqDraft
           Font.Style = [fsBold]
+          ParentColor = False
           ParentFont = False
+          OnClick = LblOpcoesClick
         end
         object LblConsultarProduto: TLabel
           Left = 8
@@ -119,10 +144,12 @@ inherited ViewPrincipal: TViewPrincipal
           Font.Pitch = fpVariable
           Font.Quality = fqDraft
           Font.Style = [fsBold]
+          ParentColor = False
           ParentFont = False
+          OnClick = LblConsultarProdutoClick
         end
         object LblEncerrarVenda: TLabel
-          Left = 256
+          Left = 240
           Height = 30
           Top = 0
           Width = 190
@@ -132,22 +159,45 @@ inherited ViewPrincipal: TViewPrincipal
           Font.Pitch = fpVariable
           Font.Quality = fqDraft
           Font.Style = [fsBold]
+          ParentColor = False
           ParentFont = False
           OnClick = LblEncerrarVendaClick
         end
-        object LblRemoverProduto: TLabel
-          Left = 256
+        object LblConsultarOrcamento: TLabel
+          Left = 240
           Height = 30
           Top = 38
-          Width = 210
-          Caption = 'F4 -Remover Produto'
+          Width = 161
+          Caption = 'F4 - Orçamentos'
           Font.CharSet = ANSI_CHARSET
           Font.Height = -21
           Font.Pitch = fpVariable
           Font.Quality = fqDraft
           Font.Style = [fsBold]
+          ParentColor = False
           ParentFont = False
+          OnClick = LblConsultarOrcamentoClick
         end
+      end
+      object EdtVlrNF: TDBEdit
+        Left = 871
+        Height = 68
+        Top = 1
+        Width = 184
+        DataField = 'VLR_NF'
+        DataSource = DtSrcCabecalho
+        Align = alRight
+        BorderSpacing.Left = 5
+        BorderSpacing.Right = 8
+        BorderStyle = bsNone
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -37
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        MaxLength = 0
+        ParentFont = False
+        TabOrder = 1
       end
     end
     object DBGrid1: TDBGrid
@@ -162,35 +212,65 @@ inherited ViewPrincipal: TViewPrincipal
           Title.Alignment = taCenter
           Title.Caption = '#'
           Width = 30
+          FieldName = 'ORDEM_GRAVACAO'
         end      
         item
           Title.Alignment = taCenter
           Title.Caption = 'Código'
           Width = 200
+          FieldName = 'COD_PRODUTO'
         end      
         item
           Title.Caption = 'Descrição'
-          Width = 500
+          Width = 550
+          FieldName = 'DESCRICAO'
         end      
         item
           Title.Alignment = taRightJustify
           Title.Caption = 'Qtdade'
           Width = 80
+          FieldName = 'QTDADE'
         end      
         item
           Title.Alignment = taRightJustify
           Title.Caption = 'Vlr.Unitário'
           Width = 150
+          FieldName = 'VLR_UNITARIO'
         end      
         item
           Title.Alignment = taRightJustify
           Title.Caption = 'Vlr.Total'
           Width = 150
+          FieldName = 'VLR_TOTAL'
         end>
+      DataSource = DtSrcDetalhe
+      Font.CharSet = ANSI_CHARSET
+      Font.Height = -21
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
       Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgDisableDelete, dgDisableInsert]
+      ParentFont = False
       TabOrder = 3
+      TitleFont.CharSet = ANSI_CHARSET
+      TitleFont.Height = -21
+      TitleFont.Pitch = fpVariable
+      TitleFont.Quality = fqDraft
+      TitleFont.Style = [fsBold]
       TitleStyle = tsNative
       OnKeyPress = DBGrid1KeyPress
     end
+  end
+  object DtSrcDetalhe: TDataSource[1]
+    Left = 176
+  end
+  object DtSrcProduto: TDataSource[2]
+    Left = 320
+  end
+  object ACBrEnterTab1: TACBrEnterTab[3]
+    Left = 32
+    Top = 8
+  end
+  object DtSrcCabecalho: TDataSource[4]
+    Left = 432
   end
 end

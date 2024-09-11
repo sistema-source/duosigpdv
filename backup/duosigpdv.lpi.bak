@@ -26,10 +26,13 @@
     </RunParams>
     <RequiredPackages>
       <Item>
-        <PackageName Value="FCL"/>
+        <PackageName Value="bgracontrols"/>
       </Item>
       <Item>
-        <PackageName Value="zcomponentdesign"/>
+        <PackageName Value="ACBrDiversos"/>
+      </Item>
+      <Item>
+        <PackageName Value="FCL"/>
       </Item>
       <Item>
         <PackageName Value="zcomponent"/>
@@ -141,6 +144,168 @@
         <ComponentName Value="ModelDmOrcamento"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
+      </Unit>
+      <Unit>
+        <Filename Value="tabela\tabela_detalhe.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="model\model_produto.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ModelDmProduto"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit>
+      <Unit>
+        <Filename Value="model\model_venda.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ModelDmVenda"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit>
+      <Unit>
+        <Filename Value="model\model_configuracao_pdv.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ModelConfiguracaoPdv"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\Biblioteca\lib_funcoes.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="view\view_mensagem_erro.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ViewMensagem"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit>
+      <Unit>
+        <Filename Value="view\view_blend.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ViewBlend"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\Biblioteca\util_teclas.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="tabela\tabela_forma_pagto.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="view\view_consulta.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ViewConsulta"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit>
+      <Unit>
+        <Filename Value="view\view_cliente.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ViewCliente"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit>
+      <Unit>
+        <Filename Value="view\view_serie_nf.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ViewSerieNf"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit>
+      <Unit>
+        <Filename Value="view\view_transporte.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ViewTransporte"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit>
+      <Unit>
+        <Filename Value="model\model_vendedor.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ModelDmVendedor"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit>
+      <Unit>
+        <Filename Value="model\model_cliente.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ModelDmCliente"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit>
+      <Unit>
+        <Filename Value="model\model_fornecedor.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ModelDmFornecedor"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit>
+      <Unit>
+        <Filename Value="view\view_opcoes.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ViewOpcoes"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit>
+      <Unit>
+        <Filename Value="view\view_cnpj_cpf.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ViewCnpjCpf"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit>
+      <Unit>
+        <Filename Value="view\view_vendedor.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ViewVendedor"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit>
+      <Unit>
+        <Filename Value="view\view_consulta_cliente.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ViewConsultaCliente"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit>
+      <Unit>
+        <Filename Value="view\view_consulta_municipio.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ViewConsultaMunicipio"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit>
+      <Unit>
+        <Filename Value="view\view_consulta_fornecedor.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ViewConsultaFornecedor"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit>
+      <Unit>
+        <Filename Value="view\view_mensagem_carregar_dados.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ViewMensagemCarregarDados"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit>
+      <Unit>
+        <Filename Value="view\view_login.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ViewLogin"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit>
+      <Unit>
+        <Filename Value="view\view_consulta_produto.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ViewConsultaProduto"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
       </Unit>
     </Units>
   </ProjectOptions>

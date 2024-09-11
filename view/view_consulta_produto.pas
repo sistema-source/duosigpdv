@@ -1,0 +1,199 @@
+unit view_consulta_produto;
+
+{$mode ObjFPC}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls,
+  lib_cores, util_teclas, model_produto, model_configuracao_pdv, model_conexao_firebird,
+  StdCtrls, Buttons, DBGrids, view_pai, lib_imagelist, DB, BCButtonFocus, BCButton;
+
+type
+
+  { TViewConsultaProduto }
+
+  TViewConsultaProduto = class(TViewPai)
+    BtnPesquisar: TBCButtonFocus;
+    BtnVoltar: TBCButtonFocus;
+    BtnOk: TBCButtonFocus;
+    CmbBxTipoPesquisa: TComboBox;
+    DtSrcConsultaProduto: TDataSource;
+    DBGrdPesquisa: TDBGrid;
+    EdtPesquisarPor: TEdit;
+    Label1: TLabel;
+    LblMensagem: TLabel;
+    LblFormaPesquisa: TLabel;
+    PnlRodape: TPanel;
+    Panel3: TPanel;
+    Panel4: TPanel;
+    PnlBackGround: TPanel;
+    PnlTopoConsulta: TPanel;
+    procedure BtnOkClick(Sender: TObject);
+    procedure BtnPesquisarClick(Sender: TObject);
+    procedure BtnVoltarClick(Sender: TObject);
+    procedure CmbBxTipoPesquisaExit(Sender: TObject);
+    procedure DBGrdPesquisaDblClick(Sender: TObject);
+    procedure DBGrdPesquisaKeyDown(Sender: TObject; var Key: word; Shift: TShiftState);
+    procedure EdtPesquisarPorKeyDown(Sender: TObject; var Key: word; Shift: TShiftState);
+    procedure FormActivate(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure FormKeyDown(Sender: TObject; var Key: word; Shift: TShiftState);
+  private
+    FCodProduto: string;
+    FModelProduto: TModelDmProduto;
+    procedure SetCodProduto(AValue: string);
+    procedure ConfirmarProduto(var Key: word);
+
+  public
+    procedure ConfigurarComponentes; override;
+
+    procedure SetModelConexaoFirebird(AValue: TModelConexaoFirebird); override;
+    property CodProduto: string read FCodProduto write SetCodProduto;
+
+  end;
+
+
+implementation
+
+{$R *.lfm}
+
+{ TViewConsultaProduto }
+
+procedure TViewConsultaProduto.BtnVoltarClick(Sender: TObject);
+begin
+  FCodProduto := '';
+  Self.Tag := 0;
+  Close;
+end;
+
+procedure TViewConsultaProduto.BtnPesquisarClick(Sender: TObject);
+begin
+  Screen.Cursor := crSQLWait;
+  BtnPesquisar.Enabled := False;
+  LblMensagem.Caption := 'Aguarde!!! Pesquisando ...';
+  Application.ProcessMessages;
+  try
+    FModelProduto.ObterProdutosConsultaPdv(ModelConfiguracaoPdv.CodLoja,
+      CmbBxTipoPesquisa.Text, EdtPesquisarPor.Text);
+  finally
+    Screen.Cursor := crDefault;
+    BtnPesquisar.Enabled := True;
+    LblMensagem.Caption := '';
+    Application.ProcessMessages;
+    DBGrdPesquisa.SetFocus;
+  end;
+end;
+
+procedure TViewConsultaProduto.BtnOkClick(Sender: TObject);
+
+var
+  LEnter: word;
+begin
+  LEnter := 13;
+  ConfirmarProduto(LEnter);
+end;
+
+procedure TViewConsultaProduto.CmbBxTipoPesquisaExit(Sender: TObject);
+begin
+  LblFormaPesquisa.Caption := '[F5] Pesquisar por ' + CmbBxTipoPesquisa.Text;
+  EdtPesquisarPor.Clear;
+end;
+
+procedure TViewConsultaProduto.DBGrdPesquisaDblClick(Sender: TObject);
+var
+  LEnter: word;
+begin
+  LEnter := 13;
+  ConfirmarProduto(LEnter);
+end;
+
+procedure TViewConsultaProduto.DBGrdPesquisaKeyDown(Sender: TObject;
+  var Key: word; Shift: TShiftState);
+begin
+  ConfirmarProduto(Key);
+  if Key = VK_F5 then
+  begin
+    EdtPesquisarPor.SetFocus;
+  end;
+end;
+
+procedure TViewConsultaProduto.EdtPesquisarPorKeyDown(Sender: TObject;
+  var Key: word; Shift: TShiftState);
+begin
+  if Key = VK_RETURN then
+  begin
+    BtnPesquisarClick(Sender);
+  end;
+end;
+
+procedure TViewConsultaProduto.FormActivate(Sender: TObject);
+begin
+  Self.Tag := 0;
+  FCodProduto := '';
+end;
+
+procedure TViewConsultaProduto.FormCreate(Sender: TObject);
+begin
+  inherited;
+  CmbBxTipoPesquisaExit(Sender);
+  FModelProduto := TModelDmProduto.Create(Self);
+
+  if not Assigned(ModelConfiguracaoPdv) then
+    ModelConfiguracaoPdv := TModelConfiguracaoPdv.Create(Self);
+
+  DtSrcConsultaProduto.DataSet := FModelProduto.QryConsultaProdutoPdv;
+
+end;
+
+procedure TViewConsultaProduto.FormKeyDown(Sender: TObject; var Key: word;
+  Shift: TShiftState);
+begin
+  if Key = VK_ESC then
+  begin
+    FCodProduto := '';
+    Close;
+  end;
+
+end;
+
+procedure TViewConsultaProduto.SetCodProduto(AValue: string);
+begin
+  if FCodProduto = AValue then Exit;
+  FCodProduto := AValue;
+end;
+
+procedure TViewConsultaProduto.ConfirmarProduto(var Key: word);
+begin
+  if Key = VK_RETURN then
+  begin
+    self.Tag := 1;
+    FCodProduto := DtSrcConsultaProduto.DataSet.FieldByName('CODPRD').AsString;
+    Close;
+  end;
+end;
+
+procedure TViewConsultaProduto.SetModelConexaoFirebird(AValue: TModelConexaoFirebird);
+begin
+  inherited;
+  FModelProduto.ModelConexaoFirebird := ModelConexaoFirebird;
+end;
+
+procedure TViewConsultaProduto.ConfigurarComponentes;
+begin
+  inherited ConfigurarComponentes;
+  ConfigurarBotao(BtnVoltar);
+  ConfigurarBotao(BtnOk);
+  ConfigurarBotao(BtnPesquisar);
+
+  // PnlRodape
+  PnlRodape.Caption := '';
+
+  // LblMEnsagem
+  LblMensagem.Font.Color := TLibCores.Info;
+  LblMensagem.Caption := '';
+  LblMensagem.Font.Size := 14;
+
+end;
+
+end.

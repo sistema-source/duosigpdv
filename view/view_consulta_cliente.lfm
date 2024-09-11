@@ -1,0 +1,7 @@
+inherited ViewConsultaCliente: TViewConsultaCliente
+  Left = 452
+  Height = 597
+  Top = 177
+  Width = 1029
+  Position = poOwnerFormCenter
+end
