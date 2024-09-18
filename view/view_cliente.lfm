@@ -1,20 +1,21 @@
 inherited ViewCliente: TViewCliente
-  Left = 797
-  Height = 597
-  Top = 246
+  Left = 503
+  Height = 499
+  Top = 198
   Width = 1024
-  ClientHeight = 597
+  ActiveControl = EdtCodCliente
+  ClientHeight = 499
   ClientWidth = 1024
-  OnCreate = FormCreate
+  OnShow = FormShow
   Position = poOwnerFormCenter
   object PnlBackGround: TPanel[0]
     Left = 0
-    Height = 597
+    Height = 499
     Top = 0
     Width = 1024
     Align = alClient
     Caption = 'PnlBackGround'
-    ClientHeight = 597
+    ClientHeight = 499
     ClientWidth = 1024
     Color = clBlue
     ParentColor = False
@@ -22,12 +23,12 @@ inherited ViewCliente: TViewCliente
     TabStop = True
     object Panel4: TPanel
       Left = 9
-      Height = 579
+      Height = 481
       Top = 9
       Width = 1006
       Align = alClient
       BorderSpacing.Around = 8
-      ClientHeight = 579
+      ClientHeight = 481
       ClientWidth = 1006
       Color = clWhite
       Font.CharSet = ANSI_CHARSET
@@ -43,7 +44,7 @@ inherited ViewCliente: TViewCliente
       object PnlRodape: TPanel
         Left = 1
         Height = 50
-        Top = 528
+        Top = 430
         Width = 1004
         Align = alBottom
         Caption = 'PnlRodape'
@@ -242,12 +243,13 @@ inherited ViewCliente: TViewCliente
       end
       object Panel1: TPanel
         Left = 1
-        Height = 486
-        Top = 42
+        Height = 392
+        Top = 38
         Width = 1004
         Align = alClient
+        BevelOuter = bvNone
         Caption = 'Panel1'
-        ClientHeight = 486
+        ClientHeight = 392
         ClientWidth = 1004
         TabOrder = 1
         object LblVlrTotalVenda: TLabel
@@ -299,12 +301,15 @@ inherited ViewCliente: TViewCliente
           Left = 16
           Height = 36
           Top = 40
-          Width = 108
+          Width = 72
           Font.CharSet = ANSI_CHARSET
           Font.Height = -20
           Font.Pitch = fpVariable
           Font.Quality = fqDraft
           NumbersOnly = True
+          OnEnter = EdtCodClienteEnter
+          OnExit = EdtCodClienteExit
+          OnKeyDown = EdtCodClienteKeyDown
           ParentFont = False
           TabStop = False
           TabOrder = 0
@@ -319,10 +324,11 @@ inherited ViewCliente: TViewCliente
           Font.Pitch = fpVariable
           Font.Quality = fqDraft
           ParentFont = False
+          ReadOnly = True
           TabOrder = 1
         end
         object EdtNomeCliente: TEdit
-          Left = 384
+          Left = 382
           Height = 36
           Top = 40
           Width = 608
@@ -331,8 +337,8 @@ inherited ViewCliente: TViewCliente
           Font.Pitch = fpVariable
           Font.Quality = fqDraft
           ParentFont = False
+          ReadOnly = True
           TabOrder = 2
-          Text = 'EdtNomeCliente'
         end
         object EdtCepCliente: TEdit
           Left = 16
@@ -366,7 +372,7 @@ inherited ViewCliente: TViewCliente
           Left = 168
           Height = 36
           Top = 128
-          Width = 720
+          Width = 824
           Font.CharSet = ANSI_CHARSET
           Font.Height = -20
           Font.Pitch = fpVariable
@@ -433,7 +439,7 @@ inherited ViewCliente: TViewCliente
           ParentFont = False
           Transparent = False
         end
-        object EdCodMunicipio: TEdit
+        object EdtCodMunicipio: TEdit
           Left = 384
           Height = 36
           Top = 216
@@ -449,8 +455,8 @@ inherited ViewCliente: TViewCliente
         object EdtNomeMunicipio: TEdit
           Left = 496
           Height = 36
-          Top = 210
-          Width = 496
+          Top = 216
+          Width = 440
           Font.CharSet = ANSI_CHARSET
           Font.Height = -20
           Font.Pitch = fpVariable
@@ -460,9 +466,9 @@ inherited ViewCliente: TViewCliente
           TabOrder = 7
         end
         object BtnPesquisarCliente: TBCButtonFocus
-          Left = 99
+          Left = 96
           Height = 42
-          Top = 37
+          Top = 32
           Width = 50
           Anchors = [akTop, akRight]
           StateClicked.Background.Gradient1.StartColor = 8404992
@@ -551,22 +557,8 @@ inherited ViewCliente: TViewCliente
           Images = LibImagem.ImageList24
           ImageIndex = 3
           MemoryUsage = bmuHighF
-          TabOrder = 8
-        end
-        object LblVlrTotalVenda7: TLabel
-          Left = 912
-          Height = 28
-          Top = 96
-          Width = 72
-          Caption = 'Número'
-          Color = clWhite
-          Font.CharSet = ANSI_CHARSET
-          Font.Height = -20
-          Font.Pitch = fpVariable
-          Font.Quality = fqDraft
-          ParentColor = False
-          ParentFont = False
-          Transparent = False
+          TabOrder = 11
+          TabStop = True
         end
         object LblVlrTotalVenda8: TLabel
           Left = 16
@@ -611,36 +603,51 @@ inherited ViewCliente: TViewCliente
           ParentFont = False
           Transparent = False
         end
-        object EdtTelefone1: TEdit
+        object EdtEmail: TEdit
           Left = 384
           Height = 36
           Top = 299
-          Width = 600
+          Width = 608
           Font.CharSet = ANSI_CHARSET
           Font.Height = -20
           Font.Pitch = fpVariable
           Font.Quality = fqDraft
           ParentFont = False
           ReadOnly = True
-          TabStop = False
-          TabOrder = 11
+          TabOrder = 10
         end
-        object EdtNumero: TEdit
-          Left = 912
+        object LblVlrTotalVenda7: TLabel
+          Left = 952
+          Height = 28
+          Top = 184
+          Width = 24
+          Caption = 'UF'
+          Color = clWhite
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -20
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+          Transparent = False
+        end
+        object EdtUf: TEdit
+          Left = 950
           Height = 36
-          Top = 128
-          Width = 60
+          Top = 216
+          Width = 40
           Font.CharSet = ANSI_CHARSET
           Font.Height = -20
           Font.Pitch = fpVariable
           Font.Quality = fqDraft
           ParentFont = False
-          TabOrder = 10
+          ReadOnly = True
+          TabOrder = 8
         end
       end
       object Label1: TLabel
         Left = 1
-        Height = 41
+        Height = 37
         Top = 1
         Width = 1004
         Align = alTop
@@ -648,7 +655,7 @@ inherited ViewCliente: TViewCliente
         Caption = 'DADOS DO CLIENTE'
         Font.CharSet = ANSI_CHARSET
         Font.Color = clBlack
-        Font.Height = -30
+        Font.Height = -27
         Font.Pitch = fpVariable
         Font.Quality = fqDraft
         Font.Style = [fsBold]
@@ -656,5 +663,10 @@ inherited ViewCliente: TViewCliente
         ParentFont = False
       end
     end
+  end
+  object ACBrEnterTab1: TACBrEnterTab[1]
+    EnterAsTab = True
+    Left = 72
+    Top = 24
   end
 end

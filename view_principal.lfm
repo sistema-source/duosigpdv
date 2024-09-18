@@ -122,8 +122,8 @@ inherited ViewPrincipal: TViewPrincipal
           Left = 8
           Height = 30
           Top = 0
-          Width = 121
-          Caption = 'F1 - Opções '
+          Width = 123
+          Caption = '[F1] Opções '
           Font.CharSet = ANSI_CHARSET
           Font.Height = -21
           Font.Pitch = fpVariable
@@ -137,8 +137,8 @@ inherited ViewPrincipal: TViewPrincipal
           Left = 8
           Height = 30
           Top = 38
-          Width = 230
-          Caption = 'F3 - Consultar Produto '
+          Width = 232
+          Caption = '[F3] Consultar Produto '
           Font.CharSet = ANSI_CHARSET
           Font.Height = -21
           Font.Pitch = fpVariable
@@ -152,8 +152,8 @@ inherited ViewPrincipal: TViewPrincipal
           Left = 240
           Height = 30
           Top = 0
-          Width = 190
-          Caption = 'F2 - Encerrar Venda'
+          Width = 192
+          Caption = '[F2] Encerrar Venda'
           Font.CharSet = ANSI_CHARSET
           Font.Height = -21
           Font.Pitch = fpVariable
@@ -167,8 +167,8 @@ inherited ViewPrincipal: TViewPrincipal
           Left = 240
           Height = 30
           Top = 38
-          Width = 161
-          Caption = 'F4 - Orçamentos'
+          Width = 163
+          Caption = '[F4] Orçamentos'
           Font.CharSet = ANSI_CHARSET
           Font.Height = -21
           Font.Pitch = fpVariable

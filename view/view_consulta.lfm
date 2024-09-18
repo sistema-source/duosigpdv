@@ -52,6 +52,7 @@ inherited ViewConsulta: TViewConsulta
           Top = 32
           Width = 248
           ItemHeight = 20
+          OnEnter = CmbBxTipoPesquisaEnter
           OnExit = CmbBxTipoPesquisaExit
           OnSelect = CmbBxTipoPesquisaSelect
           Style = csDropDownList
@@ -59,19 +60,29 @@ inherited ViewConsulta: TViewConsulta
         end
         object Label1: TLabel
           Left = 7
-          Height = 20
+          Height = 21
           Top = 4
-          Width = 88
-          Caption = 'Pesquisar por'
+          Width = 149
+          Caption = 'Campo para Pesquisa'
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -16
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
           ParentColor = False
+          ParentFont = False
         end
         object LblFormaPesquisa: TLabel
           Left = 272
-          Height = 20
-          Top = 8
-          Width = 117
+          Height = 21
+          Top = 4
+          Width = 125
           Caption = '[F5] Pesquisar por'
+          Font.CharSet = ANSI_CHARSET
+          Font.Height = -16
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
           ParentColor = False
+          ParentFont = False
         end
         object EdtPesquisarPor: TEdit
           Left = 272

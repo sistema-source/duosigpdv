@@ -1,7 +1,78 @@
 inherited ViewConsultaCliente: TViewConsultaCliente
-  Left = 452
+  Left = 388
   Height = 597
-  Top = 177
+  Top = 159
   Width = 1029
-  Position = poOwnerFormCenter
+  ClientHeight = 597
+  ClientWidth = 1029
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnShow = FormShow
+  inherited PnlBackGround: TPanel
+    Height = 597
+    Width = 1029
+    ClientHeight = 597
+    ClientWidth = 1029
+    inherited Panel4: TPanel
+      Height = 579
+      Width = 1011
+      ClientHeight = 579
+      ClientWidth = 1011
+      inherited PnlTopoConsulta: TPanel
+        Width = 1009
+        ClientWidth = 1009
+        inherited CmbBxTipoPesquisa: TComboBox
+          ItemIndex = 0
+          Items.Strings = (
+            'Nome'
+            'Cnpj/Cpf'
+            'Código'
+          )
+          OnEnter = nil
+          Text = 'Nome'
+        end
+      end
+      inherited Panel3: TPanel
+        Height = 448
+        Width = 1009
+        ClientHeight = 448
+        ClientWidth = 1009
+        inherited DBGrdPesquisa: TDBGrid
+          Height = 446
+          Width = 1007
+          Columns = <          
+            item
+              PickList.Strings = (              )
+              Title.Caption = 'Código'
+              Width = 100
+              FieldName = 'CODCLI'
+            end          
+            item
+              PickList.Strings = (              )
+              Title.Caption = 'Nome'
+              Width = 450
+              FieldName = 'NOMCLI'
+            end          
+            item
+              PickList.Strings = (              )
+              Title.Caption = 'Cnpj/Cpf'
+              Width = 250
+              FieldName = 'CGCCPFCLI'
+            end>
+        end
+      end
+      inherited PnlRodape: TPanel
+        Top = 528
+        Width = 1009
+        ClientWidth = 1009
+        inherited LblMensagem: TLabel
+          Width = 849
+        end
+        inherited BtnOk: TBCButtonFocus
+          Left = 929
+          OnClick = BtnOkClick
+        end
+      end
+    end
+  end
 end

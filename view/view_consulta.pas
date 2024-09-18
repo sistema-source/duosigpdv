@@ -32,6 +32,7 @@ type
     procedure BtnOkClick(Sender: TObject);
     procedure BtnPesquisarClick(Sender: TObject);  virtual;
     procedure BtnVoltarClick(Sender: TObject);
+    procedure CmbBxTipoPesquisaEnter(Sender: TObject);
     procedure CmbBxTipoPesquisaExit(Sender: TObject);
     procedure CmbBxTipoPesquisaSelect(Sender: TObject);
     procedure DBGrdPesquisaDblClick(Sender: TObject);
@@ -53,6 +54,7 @@ type
     procedure SetModelConexaoFirebird(AValue: TModelConexaoFirebird); override;
 
     procedure Pesquisar; virtual;
+    procedure MostrarLabelPesquisa; virtual;
 
     property KeyPesquisa: string read FKeyPesquisa write SetKeyPesquisa;
     property KeyField : String read FKeyField write SetKeyField;
@@ -75,15 +77,19 @@ begin
   Close;
 end;
 
+procedure TViewConsulta.CmbBxTipoPesquisaEnter(Sender: TObject);
+begin
+  MostrarLabelPesquisa;
+end;
+
 procedure TViewConsulta.CmbBxTipoPesquisaExit(Sender: TObject);
 begin
-
-  self.tag := 0;
+  MostrarLabelPesquisa;
 end;
 
 procedure TViewConsulta.CmbBxTipoPesquisaSelect(Sender: TObject);
 begin
-  self.tag := 0;
+  MostrarLabelPesquisa;
 end;
 
 procedure TViewConsulta.BtnOkClick(Sender: TObject);
@@ -179,6 +185,11 @@ end;
 procedure TViewConsulta.Pesquisar;
 begin
   self.tag := 0;
+end;
+
+procedure TViewConsulta.MostrarLabelPesquisa;
+begin
+  LblFormaPesquisa.Caption := '[F5] Pesquisar por ' + CmbBxTipoPesquisa.Text;
 end;
 
 procedure TViewConsulta.ConfigurarComponentes;

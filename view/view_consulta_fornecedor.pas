@@ -15,6 +15,7 @@ type
   TViewConsultaFornecedor = class(TViewConsulta)
     procedure CmbBxTipoPesquisaSelect(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     FModelFornecedor: TModelDmFornecedor;
     procedure SetModelFornecedor(AValue: TModelDmFornecedor);
@@ -41,11 +42,8 @@ implementation
 
 procedure TViewConsultaFornecedor.CmbBxTipoPesquisaSelect(Sender: TObject);
 begin
-
   inherited;
-  LblFormaPesquisa.Caption := '[F5] Pesquisar por ' + CmbBxTipoPesquisa.Text;
   EdtPesquisarPor.Clear;
-
 end;
 
 procedure TViewConsultaFornecedor.FormCreate(Sender: TObject);
@@ -60,6 +58,11 @@ begin
     ModelConfiguracaoPdv := TModelConfiguracaoPdv.Create(Self);
 
   DtSrcConsulta.DataSet := FModelFornecedor.QryConsulta;
+end;
+
+procedure TViewConsultaFornecedor.FormShow(Sender: TObject);
+begin
+  MostrarLabelPesquisa;
 end;
 
 procedure TViewConsultaFornecedor.SetModelFornecedor(AValue: TModelDmFornecedor);

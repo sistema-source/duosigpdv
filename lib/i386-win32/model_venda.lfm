@@ -3,8 +3,8 @@ object ModelDmVenda: TModelDmVenda
   OnDestroy = DataModuleDestroy
   OldCreateOrder = False
   Height = 150
-  HorizontalOffset = 747
-  VerticalOffset = 243
+  HorizontalOffset = 597
+  VerticalOffset = 195
   Width = 626
   object QryDetalhe: TZQuery
     SQL.Strings = (
@@ -66,6 +66,11 @@ object ModelDmVenda: TModelDmVenda
   end
   object DtSrcOrcamento: TDataSource
     Left = 48
+    Top = 96
+  end
+  object QryPesquisa: TZReadOnlyQuery
+    Params = <>
+    Left = 216
     Top = 96
   end
 end

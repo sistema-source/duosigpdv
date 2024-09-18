@@ -8,21 +8,23 @@ uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls,
   StdCtrls, DBGrids, Buttons, DBCtrls, rxcurredit, rxdbcurredit, view_pai,
   lib_cores, uJKDialog,
-  lib_imagelist, ACBrEnterTab, DB,
+  lib_imagelist, ACBrEnterTab, ACBrTEFD, DB,
   model_conexao_firebird,
-  model_venda, util_teclas, BCButtonFocus;
+  model_venda, util_teclas,
+  model_paygo_tef,
+  model_configuracao_pdv,
+  BCButtonFocus;
 
 type
-
   { TViewFechamentoVenda }
-
   TViewFechamentoVenda = class(TViewPai)
     ACBrEnterTab1: TACBrEnterTab;
+    ACBrTEFD1: TACBrTEFD;
     BCButtonFocus1: TBCButtonFocus;
     BtnInserirFormaPagto: TBCButtonFocus;
     BtnVoltar: TBCButtonFocus;
+    ChkBxVendaPresencial: TCheckBox;
     CmbBxFormaPagto: TComboBox;
-    DBCheckBox1: TDBCheckBox;
     DtSrcFormaPagto: TDataSource;
     DtSrcCabecalho: TDataSource;
     EdtVlrLancamento: TCurrencyEdit;
@@ -48,40 +50,55 @@ type
     EdtVlrTroco: TRxDBCurrEdit;
     Panel2: TPanel;
     Panel3: TPanel;
+    PnlTitulo: TPanel;
     PnlBackFechamentoVenda: TPanel;
     procedure BtnInserirFormaPagtoClick(Sender: TObject);
     procedure CmbBxFormaPagtoEnter(Sender: TObject);
     procedure CmbBxFormaPagtoExit(Sender: TObject);
-    procedure CmbBxFormaPagtoKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure CmbBxFormaPagtoKeyDown(Sender: TObject; var Key: word; Shift: TShiftState);
     procedure EdtVlrLancamentoKeyDown(Sender: TObject; var Key: word;
       Shift: TShiftState);
+    procedure FormCreate(Sender: TObject);
     procedure FormKeyDown(Sender: TObject; var Key: word; Shift: TShiftState);
     procedure FormShow(Sender: TObject);
     procedure SpdBtnVoltarClick(Sender: TObject);
   private
-    FModelConexaoFirebird: TModelConexaoFirebird;
+
+    PnlMsg, PnlMsgCliente, PnlMsgOperador: TPanel;
+    MmLog: TMemo;
+    FDoc001: string;
+    FDoc002: string;
+    FModelPayGoTef: TModelPayGoTef;
+
     FModelVenda: TModelDmVenda;
     FNomeBandeira: string;
     FNumAutorizacao: string;
-    FPnlMensagem: TPanel;
-    procedure SetModelConexaoFirebird(AValue: TModelConexaoFirebird);
+    FPnlMensagemVenda: TPanel;
+    procedure SetDoc001(AValue: string);
+    procedure SetDoc002(AValue: string);
+    procedure SetModelPayGoTef(AValue: TModelPayGoTef);
     procedure SetModelVenda(AValue: TModelDmVenda);
     procedure SetNomeBandeira(AValue: string);
     procedure SetNumAutorizacao(AValue: string);
     procedure MostrarMensagemErro(Sender: TObject; E: Exception);
     procedure EncerrarVenda;
-    procedure SetPnlMensagem(AValue: TPanel);
+    procedure SetPnlMensagemVenda(AValue: TPanel);
+    procedure CriarFormularioModelPayGoTef;
+
   protected
     procedure ConfigurarComponentes; override;
   public
 
 
+
     property ModelVenda: TModelDmVenda read FModelVenda write SetModelVenda;
     property NomeBandeira: string read FNomeBandeira write SetNomeBandeira;
     property NumAutorizacao: string read FNumAutorizacao write SetNumAutorizacao;
+    property Doc001: string read FDoc001 write SetDoc001;
+    property Doc002: string read FDoc002 write SetDoc002;
+    property PnlMensagemVenda: TPanel read FPnlMensagemVenda write SetPnlMensagemVenda;
 
-    property PnlMensagem : TPanel read FPnlMensagem write SetPnlMensagem;
-    property ModelConexaoFirebird : TModelConexaoFirebird read FModelConexaoFirebird write SetModelConexaoFirebird;
+    property ModelPayGoTef: TModelPayGoTef read FModelPayGoTef write SetModelPayGoTef;
   end;
 
 var
@@ -106,11 +123,19 @@ begin
     if not Assigned(FModelVenda) then
       raise Exception.Create('Não foi atribuido a variável ModelVenda');
 
-    FModelVenda.InserirFormaPagto(CmbBxFormaPagto.Text, EdtVlrLancamento.Value,
-      FNomeBandeira, FNumAutorizacao);
+    BtnInserirFormaPagtoClick(Sender);
 
     CmbBxFormaPagto.SetFocus;
   end;
+end;
+
+procedure TViewFechamentoVenda.FormCreate(Sender: TObject);
+begin
+  inherited;
+  PnlMsgCliente := TPanel.Create(self);
+  PnlMsgOperador := TPanel.Create(Self);
+  PnlMsg := TPanel.Create(Self);
+  MmLog := TMemo.Create(Self);
 end;
 
 procedure TViewFechamentoVenda.FormKeyDown(Sender: TObject; var Key: word;
@@ -139,7 +164,7 @@ end;
 
 procedure TViewFechamentoVenda.FormShow(Sender: TObject);
 begin
-  LblMensagem.Caption:= '';
+  LblMensagem.Caption := '';
   Application.OnException := @MostrarMensagemErro;
 end;
 
@@ -148,22 +173,60 @@ begin
   EdtVlrLancamento.Clear;
 end;
 
-procedure TViewFechamentoVenda.CmbBxFormaPagtoKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+procedure TViewFechamentoVenda.CmbBxFormaPagtoKeyDown(Sender: TObject;
+  var Key: word; Shift: TShiftState);
 begin
-  If Key = VK_RETURN then
+  if Key = VK_RETURN then
     EdtVlrLancamento.SetFocus;
 end;
 
 procedure TViewFechamentoVenda.BtnInserirFormaPagtoClick(Sender: TObject);
 begin
-  FModelVenda.InserirFormaPagto(CmbBxFormaPagto.Text, EdtVlrLancamento.Value,
-    FNomeBandeira, FNumAutorizacao);
+
+  try
+    PnlMsg.Visible := True;
+
+    if (CmbBxFormaPagto.Text = 'TEF CRÉDITO') or
+      (CmbBxFormaPagto.Text = 'TEF DÉBITO') then
+    begin
+      Blend(True);
+      if not Assigned(ModelPayGoTef) then
+        CriarFormularioModelPayGoTef;
+
+      ModelPayGoTef.ModeloFiscal := '99';
+      ModelPayGoTef.ConfigurarImpressora;
+    end;
+    if CmbBxFormaPagto.Text = 'TEF CRÉDITO' then
+      If Not modelPayGoTef.VenderCartaoCredito('', EdtVlrLancamento.Value) then
+      begin
+        CmbBxFormaPagto.SetFocus;
+        Abort;
+      end;
+
+    if CmbBxFormaPagto.Text = 'TEF DÉBITO' then
+      modelPayGoTef.VenderCartaoDebito('', EdtVlrLancamento.Value);
+
+    if (CmbBxFormaPagto.Text = 'TEF CRÉDITO') or
+      (CmbBxFormaPagto.Text = 'TEF DÉBITO') then
+    begin
+      FDoc001 := ModelPayGoTef.Doc001;
+      FDoc002 := ModelPayGoTef.Doc002;
+      FNomeBandeira := ModelPayGoTef.Bandeira;
+      FNumAutorizacao := ModelPayGoTef.CodAutorizacao;
+    end;
+
+    FModelVenda.InserirFormaPagto(CmbBxFormaPagto.Text, EdtVlrLancamento.Value,
+      FNomeBandeira, FNumAutorizacao, Doc001, Doc002);
+  finally
+    Blend(False);
+    PnlMsg.Visible := False;
+  end;
   CmbBxFormaPagto.SetFocus;
 end;
 
 procedure TViewFechamentoVenda.CmbBxFormaPagtoEnter(Sender: TObject);
 begin
-  If EdtVlrTotalRecebido.Value >= EdtVlrTotalReceber.Value then
+  if EdtVlrTotalRecebido.Value >= EdtVlrTotalReceber.Value then
   begin
     EncerrarVenda;
   end;
@@ -175,11 +238,24 @@ begin
   FModelVenda := AValue;
 end;
 
-procedure TViewFechamentoVenda.SetModelConexaoFirebird(AValue: TModelConexaoFirebird);
+procedure TViewFechamentoVenda.SetModelPayGoTef(AValue: TModelPayGoTef);
 begin
-  if FModelConexaoFirebird=AValue then Exit;
-  FModelConexaoFirebird:=AValue;
+  if FModelPayGoTef = AValue then Exit;
+  FModelPayGoTef := AValue;
 end;
+
+procedure TViewFechamentoVenda.SetDoc001(AValue: string);
+begin
+  if FDoc001 = AValue then Exit;
+  FDoc001 := AValue;
+end;
+
+procedure TViewFechamentoVenda.SetDoc002(AValue: string);
+begin
+  if FDoc002 = AValue then Exit;
+  FDoc002 := AValue;
+end;
+
 
 procedure TViewFechamentoVenda.SetNomeBandeira(AValue: string);
 begin
@@ -202,18 +278,42 @@ end;
 
 procedure TViewFechamentoVenda.EncerrarVenda;
 begin
-  LblMensagem.Caption:= 'ENCERRADNDO VENDA ...' ;
-  Application.ProcessMessages;
-  Sleep(4000);
-  Close;
+  LblMensagem.Caption := 'ENCERRANDO  VENDA ...';
+  try
+    Application.ProcessMessages;
+    If ChkBxVendaPresencial.Checked then
+      ModelVenda.IndPresenca:= 'S'
+    Else
+    ModelVenda.IndPresenca:= 'N';
+    ModelVenda.EncerrarVenda;
+
+  except
+    on e: Exception do
+    begin
+      LblMensagem.Caption := '';
+      CmbBxFormaPagto.SetFocus;
+      raise Exception.Create(e.message);
+    end;
+  end;
   FModelVenda.NovaVenda;
-  PnlMensagem.Caption:= 'CAIXA LIVRE';
+  PnlMensagemVenda.Caption := 'CAIXA LIVRE';
+  Close;
 end;
 
-procedure TViewFechamentoVenda.SetPnlMensagem(AValue: TPanel);
+procedure TViewFechamentoVenda.SetPnlMensagemVenda(AValue: TPanel);
 begin
-  if FPnlMensagem=AValue then Exit;
-  FPnlMensagem:=AValue;
+  if FPnlMensagemVenda = AValue then Exit;
+  FPnlMensagemVenda := AValue;
+end;
+
+procedure TViewFechamentoVenda.CriarFormularioModelPayGoTef;
+begin
+  ModelPayGoTef := TModelPayGoTef.Create(self);
+  ModelPayGoTef.PnlMsgCliente := PnlMsgCliente;
+  ModelPayGoTef.PnlMsgOperador := PnlMsgOperador;
+  ModelPayGoTef.MmLog := MmLog;
+  ModelPayGoTef.AtivarTef;
+
 end;
 
 procedure TViewFechamentoVenda.ConfigurarComponentes;
@@ -236,7 +336,6 @@ begin
   LblVlrDesconto.Font.Color := LblVlrTroco.Font.Color;
 
   LblVlrRecebido.Font.Color := TLibCores.Verde;
-
 
 end;
 

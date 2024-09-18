@@ -251,6 +251,7 @@ inherited ViewTransporte: TViewTransporte
         Top = 42
         Width = 999
         Align = alClient
+        BevelOuter = bvNone
         Caption = 'Panel1'
         ClientHeight = 486
         ClientWidth = 999

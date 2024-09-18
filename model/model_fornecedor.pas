@@ -21,6 +21,7 @@ type
 
 
     procedure ObterListaFornecedor(pTipoPesquisa, pVlrPesquisa: string);
+
     function ObterCpjRazaoSocialFornecedor(pCodFornecedor: integer;
       out pCnpj: string; out pRazaoSocial: string): boolean;
 
@@ -67,7 +68,7 @@ begin
   end
   else if pTipoPesquisa = 'Cnpj/Cpf' then
   begin
-    LWhere := LWhere + ' WHERE s029.cffrn = :pVlrPesquisa';
+    LWhere := LWhere + ' WHERE s029.cgcfrn = :pVlrPesquisa';
   end
   else if pTipoPesquisa = 'Razão Social' then
   begin
@@ -89,12 +90,12 @@ var
   s: string;
 begin
   s := 'select s029.codfrn, s029.razfrn, s029.cgcfrn from sinaf029 s029 ';
-  s := s + ' where s029.codfrn = :pCodFrn';
+  s := s + ' where s029.codfrn = :pCodFornecedor';
   Qry := TZReadOnlyQuery.Create(nil);
   Qry.Connection := FModelConexaoFirebird.ConexaoFirebird;
   try
     Qry.SQL.Text := s;
-    Qry.ParamByName('pCodFrn').AsInteger := pCodFornecedor;
+    Qry.ParamByName('pCodFornecedor').AsInteger := pCodFornecedor;
     Qry.Open;
     Result := not Qry.IsEmpty;
     pCnpj := Qry.FieldByName('cgcfrn').AsString;

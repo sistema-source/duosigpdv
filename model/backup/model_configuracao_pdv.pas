@@ -15,6 +15,8 @@ type
     QryPesquisa: TZQuery;
     procedure DataModuleCreate(Sender: TObject);
   private
+    FClienteConsumidorFinal: Boolean;
+    FClienteContribuinte: Boolean;
     FCodCliente: integer;
     FCodCondicaoPagto: integer;
     FCodHistorico: string;
@@ -31,9 +33,14 @@ type
     FMarcaVolume: String;
     FModelConexaoFirebird: TModelConexaoFirebird;
     FNumCaixa: integer;
+    FPerSimples: Currency;
+    FRegimeTributacao: string;
+    FStsCfo: String;
     FTipoEntrega: string;
     FTipoFrete: string;
     FViaTransporte: string;
+    procedure SetClienteConsumidorFinal(AValue: Boolean);
+    procedure SetClienteContribuinte(AValue: Boolean);
     procedure SetCodCliente(AValue: integer);
     procedure SetCodCondicaoPagto(AValue: integer);
     procedure SetCodHistorico(AValue: string);
@@ -50,6 +57,9 @@ type
     procedure SetMarcaVolume(AValue: String);
     procedure SetModelConexaoFirebird(AValue: TModelConexaoFirebird);
     procedure SetNumCaixa(AValue: integer);
+    procedure SetPerSimples(AValue: Currency);
+    procedure SetRegimeTributacao(AValue: string);
+    procedure SetStsCfo(AValue: String);
     procedure SetTipoEntrega(AValue: string);
     procedure SetTipoFrete(AValue: string);
     procedure SetViaTransporte(AValue: string);
@@ -83,6 +93,13 @@ type
     property EspecieVolume : String read FEspecieVolume write SetEspecieVolume;
     property MarcaVolume : String read FMarcaVolume write SetMarcaVolume;
 
+    property StsCfo : String read FStsCfo write SetStsCfo;
+    property ClienteContribuinte : Boolean read FClienteContribuinte write SetClienteContribuinte;
+    property ClienteConsumidorFinal : Boolean read FClienteConsumidorFinal write SetClienteConsumidorFinal;
+    property PerSimples : Currency read FPerSimples write SetPerSimples;
+    property RegimeTributacao : string read FRegimeTributacao write SetRegimeTributacao;
+    property SenhaCertificadoDigital : String;
+
 
 
 
@@ -114,6 +131,18 @@ procedure TModelConfiguracaoPdv.SetCodCliente(AValue: integer);
 begin
   if FCodCliente = AValue then Exit;
   FCodCliente := AValue;
+end;
+
+procedure TModelConfiguracaoPdv.SetClienteConsumidorFinal(AValue: Boolean);
+begin
+  if FClienteConsumidorFinal=AValue then Exit;
+  FClienteConsumidorFinal:=AValue;
+end;
+
+procedure TModelConfiguracaoPdv.SetClienteContribuinte(AValue: Boolean);
+begin
+  if FClienteContribuinte=AValue then Exit;
+  FClienteContribuinte:=AValue;
 end;
 
 procedure TModelConfiguracaoPdv.SetCodCondicaoPagto(AValue: integer);
@@ -202,6 +231,24 @@ begin
   FNumCaixa := AValue;
 end;
 
+procedure TModelConfiguracaoPdv.SetPerSimples(AValue: Currency);
+begin
+  if FPerSimples=AValue then Exit;
+  FPerSimples:=AValue;
+end;
+
+procedure TModelConfiguracaoPdv.SetRegimeTributacao(AValue: string);
+begin
+  if FRegimeTributacao=AValue then Exit;
+  FRegimeTributacao:=AValue;
+end;
+
+procedure TModelConfiguracaoPdv.SetStsCfo(AValue: String);
+begin
+  if FStsCfo=AValue then Exit;
+  FStsCfo:=AValue;
+end;
+
 procedure TModelConfiguracaoPdv.SetTipoEntrega(AValue: string);
 begin
   if FTipoEntrega = AValue then Exit;
@@ -244,10 +291,17 @@ begin
   s := s + '         s501.defcodzonvda,';
   s := s + '         ' + QuotedStr('B') + ' as deftpoetg,';
   s := s + '         s501.defcodcliorc, ';
-  s := s + '         s501.defespvol, '
-  s := s + '          s501.defmrcvol '
+  s := s + '         s501.defespvol, ';
+  s := s + '          s501.defmrcvol,  ';
+  s := s + '          s018.s018.persimples,  ';
+  s := s + '          s018.statporeg,  ';
+  s := s + '          s019.staclicon, ,  ';
+  s := s + '          s019.stacliconfin,  ';
   s := s + '     from sinaf501 s501';
   s := s + '     left join sinaf498 s498 on s498.ideusu = s501.ideusu';
+  s := s + '     left join sinaf018 s018 on s018.empgrp = '+QuotedStr('01') + ' and s018.codlja = S501.defcodlja';
+  s := s + '     left join sinaf019 s019 on s019.codcli =  S501.defcodcli';
+  s := s + '     left join sinaf104 s104 on s104.codope =  S501.defcodtpoope';
   s := s + '     where s501.ideusu = :pUsuario';
 
   QryPesquisa.Close;
@@ -276,6 +330,17 @@ begin
   TipoEntrega := QryPesquisa.FieldByName('deftpoetg').AsString;
   EspecieVolume := QryPesquisa.FieldByName('defespvol').AsString;
   MarcaVolume := QryPesquisa.FieldByName('defmrcvol').AsString;
+
+   StsCfo := QryPesquisa.FieldByName('tpoope').AsString;
+   ClienteContribuinte :=  QryPesquisa.FieldByName('staclicon').AsString = 'S';
+   ClienteConsumidorFinal := QryPesquisa.FieldByName('stacliconfin').AsString = 'S';
+   PerSimples := QryPesquisa.FieldByName('persimples').AsCurrency;
+   RegimeTributacao := QryPesquisa.FieldByName('statporeg').AsString;
+
+
+
+
+
 end;
 
 

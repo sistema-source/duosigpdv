@@ -5,7 +5,7 @@ unit view_opcoes;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls,
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
   model_conexao_firebird, model_venda, util_teclas,
   BCButtonFocus, view_pai, view_vendedor, view_cnpj_cpf, view_transporte, view_cliente;
 
@@ -14,6 +14,7 @@ type
   { TViewOpcoes }
 
   TViewOpcoes = class(TViewPai)
+    BtnCancelarVenda: TBCButtonFocus;
     BtnDadosTransporte: TBCButtonFocus;
     BtnDadosCliente: TBCButtonFocus;
     BtnVoltar: TBCButtonFocus;
@@ -21,6 +22,7 @@ type
     BtnCnpjCpf: TBCButtonFocus;
     Panel4: TPanel;
     PnlBackGround: TPanel;
+    procedure BtnCancelarVendaButtonClick(Sender: TObject);
     procedure BtnCnpjCpfClick(Sender: TObject);
     procedure BtnDadosClienteClick(Sender: TObject);
     procedure BtnDadosTransporteClick(Sender: TObject);
@@ -28,11 +30,15 @@ type
     procedure BtnVoltarClick(Sender: TObject);
     procedure FormKeyDown(Sender: TObject; var Key: word; Shift: TShiftState);
   private
+    FPnlMensagem: TPanel;
     FModelVenda: TModelDmVenda;
     procedure SeTModelDmVenda(AValue: TModelDmVenda);
+    procedure SetPnlMensagem(AValue: TPanel);
   public
     procedure ConfigurarComponentes; override;
     property ModelVenda: TModelDmVenda read FModelVenda write SeTModelDmVenda;
+    property PnlMensagem : TPanel read FPnlMensagem write SetPnlMensagem;
+
 
   end;
 
@@ -55,10 +61,11 @@ begin
   else if key = VK_F3 then
     BtnCnpjCpfClick(Sender)
   else if key = VK_F4 then
-    BtnDadosTransporteClick(Sender);
+    BtnDadosTransporteClick(Sender)
   else if key = VK_F5 then
-    BtnDadosClienteClick(Sender);
-
+    BtnDadosClienteClick(Sender)
+  else if key = VK_F6 then
+    BtnCancelarVendaButtonClick(Sender);
 
 end;
 
@@ -66,6 +73,12 @@ procedure TViewOpcoes.SeTModelDmVenda(AValue: TModelDmVenda);
 begin
   if FModelVenda = AValue then Exit;
   FModelVenda := AValue;
+end;
+
+procedure TViewOpcoes.SetPnlMensagem(AValue: TPanel);
+begin
+  if FPnlMensagem=AValue then Exit;
+  FPnlMensagem:=AValue;
 end;
 
 
@@ -98,12 +111,21 @@ begin
   Blend(False);
 end;
 
+procedure TViewOpcoes.BtnCancelarVendaButtonClick(Sender: TObject);
+begin
+  ModelVenda.CancelarVenda(ModelVenda.Id);
+  FPnlMensagem.Caption:= 'CAIXA LIVRE';
+  Close;
+end;
+
 procedure TViewOpcoes.BtnDadosClienteClick(Sender: TObject);
 begin
   if not Assigned(ViewCliente) then
   begin
     ViewCliente := TViewCliente.Create(Application);
     ViewCliente.BorderStyle := bsNone;
+    ViewCliente.ModelConexaoFirebird := ModelConexaoFirebird;
+    viewCliente.ModelVenda := FModelVenda;
   end;
   Blend(True);
   ViewCliente.ShowModal;
@@ -134,6 +156,7 @@ begin
   ConfigurarBotao(BtnVendedor);
   ConfigurarBotao(BtnDadosCliente);
   ConfigurarBotao(BtnDadosTransporte);
+  ConfigurarBotao(BtnCancelarVenda);
   ConfigurarBotao(BtnVoltar);
 end;
 

@@ -26,6 +26,21 @@
     </RunParams>
     <RequiredPackages>
       <Item>
+        <PackageName Value="ACBr_NFe_DanfeRL"/>
+      </Item>
+      <Item>
+        <PackageName Value="ACBr_NFe_DanfeESCPOS"/>
+      </Item>
+      <Item>
+        <PackageName Value="ACBr_NFe"/>
+      </Item>
+      <Item>
+        <PackageName Value="ACBrSerial"/>
+      </Item>
+      <Item>
+        <PackageName Value="ACBr_TEFD"/>
+      </Item>
+      <Item>
         <PackageName Value="bgracontrols"/>
       </Item>
       <Item>
@@ -306,6 +321,35 @@
         <ComponentName Value="ViewConsultaProduto"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
+      </Unit>
+      <Unit>
+        <Filename Value="model\model_paygo_tef1.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ModelPayGoTef1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit>
+      <Unit>
+        <Filename Value="model\model_sessao.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="model\model_configuracao_inifile.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="model\model_paygo_tef.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ModelPayGoTef"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit>
+      <Unit>
+        <Filename Value="model\model_nfe.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ModelNFe"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
       </Unit>
     </Units>
   </ProjectOptions>

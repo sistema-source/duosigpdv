@@ -5,7 +5,8 @@ unit view_consulta_fornecedor;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, view_pai, view_consulta, model_fornecedor, model_configuracao_pdv, model_conexao_firebird;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, view_pai,
+  view_consulta, model_fornecedor, model_configuracao_pdv, model_conexao_firebird;
 
 type
 
@@ -14,16 +15,18 @@ type
   TViewConsultaFornecedor = class(TViewConsulta)
     procedure CmbBxTipoPesquisaSelect(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     FModelFornecedor: TModelDmFornecedor;
     procedure SetModelFornecedor(AValue: TModelDmFornecedor);
 
   public
 
-      procedure SetModelConexaoFirebird(AValue: TModelConexaoFirebird); override;
-      procedure Pesquisar; override;
+    procedure SetModelConexaoFirebird(AValue: TModelConexaoFirebird); override;
+    procedure Pesquisar; override;
 
-    property ModelFornecedor : TModelDmFornecedor read FModelFornecedor write SetModelFornecedor;
+    property ModelFornecedor: TModelDmFornecedor
+      read FModelFornecedor write SetModelFornecedor;
 
 
   end;
@@ -39,17 +42,14 @@ implementation
 
 procedure TViewConsultaFornecedor.CmbBxTipoPesquisaSelect(Sender: TObject);
 begin
-
   inherited;
-  LblFormaPesquisa.Caption:= '[F5] Pesquisar por '+CmbBxTipoPesquisa.Text;
   EdtPesquisarPor.Clear;
-
 end;
 
 procedure TViewConsultaFornecedor.FormCreate(Sender: TObject);
 begin
   inherited;
-  CmbBxTipoPesquisa.ItemIndex:= 0;
+  CmbBxTipoPesquisa.ItemIndex := 0;
   CmbBxTipoPesquisaExit(Sender);
 
   FModelFornecedor := TModelDmFornecedor.Create(Self);
@@ -60,10 +60,15 @@ begin
   DtSrcConsulta.DataSet := FModelFornecedor.QryConsulta;
 end;
 
+procedure TViewConsultaFornecedor.FormShow(Sender: TObject);
+begin
+  MostrarLabelPesquisa;
+end;
+
 procedure TViewConsultaFornecedor.SetModelFornecedor(AValue: TModelDmFornecedor);
 begin
-  if FModelFornecedor=AValue then Exit;
-  FModelFornecedor:=AValue;
+  if FModelFornecedor = AValue then Exit;
+  FModelFornecedor := AValue;
 end;
 
 procedure TViewConsultaFornecedor.SetModelConexaoFirebird(AValue: TModelConexaoFirebird);
@@ -75,7 +80,7 @@ end;
 procedure TViewConsultaFornecedor.Pesquisar;
 begin
   inherited Pesquisar;
-    Screen.Cursor := crSQLWait;
+  Screen.Cursor := crSQLWait;
   BtnPesquisar.Enabled := False;
   LblMensagem.Caption := 'Aguarde!!! Pesquisando ...';
   Application.ProcessMessages;
@@ -88,8 +93,6 @@ begin
     Application.ProcessMessages;
     DBGrdPesquisa.SetFocus;
   end;
-
-
 end;
 
 end.

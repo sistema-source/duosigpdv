@@ -19,9 +19,11 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="-1"/>
+        <TopLine Value="304"/>
+        <CursorPos X="72" Y="349"/>
         <UsageCount Value="206"/>
         <Bookmarks Count="1">
-          <Item0 Y="212" ID="1"/>
+          <Item0 X="35" Y="321" ID="1"/>
         </Bookmarks>
       </Unit>
       <Unit>
@@ -42,15 +44,15 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
         <EditorIndex Value="-1"/>
-        <CursorPos X="21" Y="36"/>
+        <CursorPos X="13" Y="36"/>
         <UsageCount Value="206"/>
       </Unit>
       <Unit>
         <Filename Value="tabela\tabela_cabecalho.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="13"/>
-        <CursorPos X="55" Y="39"/>
+        <TopLine Value="75"/>
+        <CursorPos X="37" Y="119"/>
         <UsageCount Value="206"/>
       </Unit>
       <Unit>
@@ -64,16 +66,14 @@
         <Filename Value="tabela\tabela_pai.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="60"/>
-        <CursorPos X="81" Y="72"/>
+        <TopLine Value="54"/>
+        <CursorPos Y="64"/>
         <UsageCount Value="206"/>
       </Unit>
       <Unit>
         <Filename Value="tabela\tabelas.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="55"/>
-        <CursorPos Y="68"/>
         <UsageCount Value="206"/>
       </Unit>
       <Unit>
@@ -102,8 +102,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="130"/>
-        <CursorPos Y="175"/>
+        <TopLine Value="40"/>
+        <CursorPos X="28" Y="84"/>
         <UsageCount Value="207"/>
       </Unit>
       <Unit>
@@ -134,8 +134,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="4"/>
-        <CursorPos Y="38"/>
+        <TopLine Value="30"/>
+        <CursorPos X="58" Y="65"/>
         <UsageCount Value="209"/>
       </Unit>
       <Unit>
@@ -163,9 +163,11 @@
       <Unit>
         <Filename Value="tabela\tabela_detalhe.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <CursorPos X="30" Y="40"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="43"/>
+        <CursorPos X="40" Y="77"/>
         <UsageCount Value="204"/>
+        <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="model\model_produto.pas"/>
@@ -174,9 +176,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="106"/>
-        <CursorPos Y="146"/>
-        <FoldState Value=" T7aI51 TL Hi02]93kK033^"/>
+        <TopLine Value="92"/>
+        <CursorPos X="31" Y="106"/>
+        <FoldState Value=" T7aI51 TL Hi02]93kb033l"/>
         <UsageCount Value="202"/>
       </Unit>
       <Unit>
@@ -185,13 +187,15 @@
         <ComponentName Value="ModelDmVenda"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="300"/>
-        <CursorPos X="3" Y="303"/>
+        <EditorIndex Value="6"/>
+        <TopLine Value="359"/>
+        <CursorPos X="71" Y="404"/>
+        <FoldState Value=" T3l5072717241123 piavg0i12C3211 PkRoY0/"/>
         <UsageCount Value="202"/>
         <Bookmarks Count="1">
-          <Item0 X="4" Y="241" ID="8"/>
+          <Item0 Y="609" ID="9"/>
         </Bookmarks>
+        <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="model\model_configuracao_pdv.pas"/>
@@ -200,17 +204,17 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="222"/>
-        <CursorPos X="40" Y="249"/>
+        <TopLine Value="247"/>
+        <CursorPos X="3" Y="250"/>
         <UsageCount Value="201"/>
       </Unit>
       <Unit>
         <Filename Value="..\Biblioteca\lib_funcoes.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="28"/>
-        <CursorPos X="23" Y="73"/>
+        <EditorIndex Value="5"/>
+        <CursorPos X="46" Y="23"/>
         <UsageCount Value="200"/>
+        <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="view\view_mensagem_erro.pas"/>
@@ -242,7 +246,7 @@
         <Filename Value="tabela\tabela_forma_pagto.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <CursorPos X="39" Y="37"/>
+        <CursorPos X="194" Y="24"/>
         <UsageCount Value="202"/>
       </Unit>
       <Unit>
@@ -252,18 +256,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="99"/>
-        <CursorPos X="69" Y="129"/>
-        <UsageCount Value="159"/>
-      </Unit>
-      <Unit>
-        <Filename Value="view\view_vendedor.pas"/>
-        <ComponentName Value="ViewVendedor"/>
-        <HasResources Value="True"/>
-        <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="-1"/>
-        <CursorPos X="49" Y="17"/>
-        <UsageCount Value="19"/>
+        <TopLine Value="147"/>
+        <CursorPos X="51" Y="192"/>
+        <UsageCount Value="209"/>
       </Unit>
       <Unit>
         <Filename Value="view\view_cliente.pas"/>
@@ -271,11 +266,9 @@
         <ComponentName Value="ViewCliente"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <IsVisibleTab Value="True"/>
-        <CursorPos X="80" Y="8"/>
-        <UsageCount Value="123"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="37" Y="8"/>
+        <UsageCount Value="240"/>
       </Unit>
       <Unit>
         <Filename Value="view\view_serie_nf.pas"/>
@@ -284,9 +277,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="19"/>
-        <CursorPos X="25" Y="50"/>
-        <UsageCount Value="123"/>
+        <CursorPos X="68" Y="11"/>
+        <UsageCount Value="240"/>
       </Unit>
       <Unit>
         <Filename Value="view\view_transporte.pas"/>
@@ -294,12 +286,10 @@
         <ComponentName Value="ViewTransporte"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="3"/>
-        <TopLine Value="185"/>
-        <CursorPos Y="234"/>
-        <UsageCount Value="123"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="73"/>
+        <CursorPos X="19" Y="118"/>
+        <UsageCount Value="240"/>
       </Unit>
       <Unit>
         <Filename Value="model\model_vendedor.pas"/>
@@ -310,7 +300,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="72"/>
         <CursorPos Y="118"/>
-        <UsageCount Value="122"/>
+        <UsageCount Value="239"/>
       </Unit>
       <Unit>
         <Filename Value="model\model_cliente.pas"/>
@@ -318,11 +308,10 @@
         <ComponentName Value="ModelDmCliente"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
-        <EditorIndex Value="4"/>
-        <CursorPos X="3" Y="35"/>
-        <UsageCount Value="120"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="55"/>
+        <CursorPos X="30" Y="76"/>
+        <UsageCount Value="237"/>
       </Unit>
       <Unit>
         <Filename Value="model\model_fornecedor.pas"/>
@@ -331,9 +320,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="55"/>
-        <CursorPos X="18" Y="91"/>
-        <UsageCount Value="120"/>
+        <TopLine Value="56"/>
+        <CursorPos X="18" Y="97"/>
+        <UsageCount Value="237"/>
       </Unit>
       <Unit>
         <Filename Value="view\view_opcoes.pas"/>
@@ -341,12 +330,9 @@
         <ComponentName Value="ViewOpcoes"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="1"/>
-        <TopLine Value="10"/>
-        <CursorPos X="36" Y="58"/>
-        <UsageCount Value="120"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="45" Y="5"/>
+        <UsageCount Value="237"/>
       </Unit>
       <Unit>
         <Filename Value="view\view_cnpj_cpf.pas"/>
@@ -357,39 +343,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="92"/>
         <CursorPos X="3" Y="103"/>
-        <UsageCount Value="120"/>
-      </Unit>
-      <Unit>
-        <Filename Value="C:\temp\lazdemos_gsl-main\lazdemos_gsl-main\lazdemo_imagelist\dm.principal.pas"/>
-        <ComponentName Value="DataModule1"/>
-        <HasResources Value="True"/>
-        <ResourceBaseClass Value="DataModule"/>
-        <EditorIndex Value="-1"/>
-        <CursorPos X="5" Y="7"/>
-        <UsageCount Value="10"/>
-      </Unit>
-      <Unit>
-        <Filename Value="C:\lazarus\fpc\3.2.2\source\rtl\objpas\classes\classesh.inc"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="2137"/>
-        <CursorPos X="76" Y="2150"/>
-        <UsageCount Value="12"/>
-      </Unit>
-      <Unit>
-        <Filename Value="..\Biblioteca\uJKDialog.pas"/>
-        <EditorIndex Value="-1"/>
-        <CursorPos X="45" Y="8"/>
-        <UsageCount Value="4"/>
-      </Unit>
-      <Unit>
-        <Filename Value="..\Biblioteca\uformdialogs.pas"/>
-        <ComponentName Value="JKFormDialog"/>
-        <HasResources Value="True"/>
-        <ResourceBaseClass Value="Form"/>
-        <UnitName Value="uformDialogs"/>
-        <EditorIndex Value="-1"/>
-        <CursorPos X="72" Y="26"/>
-        <UsageCount Value="4"/>
+        <UsageCount Value="237"/>
       </Unit>
       <Unit>
         <Filename Value="view\view_vendedor.pas"/>
@@ -400,7 +354,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="55"/>
         <CursorPos X="29" Y="81"/>
-        <UsageCount Value="114"/>
+        <UsageCount Value="232"/>
       </Unit>
       <Unit>
         <Filename Value="view\view_consulta_cliente.pas"/>
@@ -408,11 +362,10 @@
         <ComponentName Value="ViewConsultaCliente"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="2"/>
-        <CursorPos X="54" Y="35"/>
-        <UsageCount Value="113"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="19"/>
+        <CursorPos Y="52"/>
+        <UsageCount Value="230"/>
       </Unit>
       <Unit>
         <Filename Value="view\view_consulta_municipio.pas"/>
@@ -422,7 +375,7 @@
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="88" Y="26"/>
-        <UsageCount Value="113"/>
+        <UsageCount Value="230"/>
       </Unit>
       <Unit>
         <Filename Value="view\view_consulta_fornecedor.pas"/>
@@ -431,16 +384,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="42"/>
-        <CursorPos Y="93"/>
-        <UsageCount Value="113"/>
-      </Unit>
-      <Unit>
-        <Filename Value="d:\Componentes\ACBR\Fontes\ACBrDiversos\ACBrValidador.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="24"/>
-        <CursorPos X="31" Y="51"/>
-        <UsageCount Value="21"/>
+        <TopLine Value="46"/>
+        <CursorPos X="99" Y="48"/>
+        <UsageCount Value="230"/>
       </Unit>
       <Unit>
         <Filename Value="view\view_mensagem_carregar_dados.pas"/>
@@ -450,7 +396,7 @@
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="18"/>
-        <UsageCount Value="82"/>
+        <UsageCount Value="201"/>
       </Unit>
       <Unit>
         <Filename Value="view\view_login.pas"/>
@@ -460,7 +406,7 @@
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="98" Y="12"/>
-        <UsageCount Value="34"/>
+        <UsageCount Value="204"/>
       </Unit>
       <Unit>
         <Filename Value="view\view_consulta_produto.pas"/>
@@ -471,125 +417,307 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="23"/>
         <CursorPos Y="52"/>
-        <UsageCount Value="31"/>
+        <UsageCount Value="201"/>
+      </Unit>
+      <Unit>
+        <Filename Value="model\model_paygo_tef1.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ModelPayGoTef1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="658"/>
+        <CursorPos Y="711"/>
+        <FoldState Value=" T3lW0601121L1 PDpR0d"/>
+        <UsageCount Value="189"/>
+      </Unit>
+      <Unit>
+        <Filename Value="model\model_sessao.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="25" Y="17"/>
+        <UsageCount Value="163"/>
+      </Unit>
+      <Unit>
+        <Filename Value="model\model_configuracao_inifile.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="278"/>
+        <CursorPos X="76" Y="310"/>
+        <UsageCount Value="136"/>
+      </Unit>
+      <Unit>
+        <Filename Value="model\model_paygo_tef.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ModelPayGoTef"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="87" Y="20"/>
+        <FoldState Value=" T3uD03e"/>
+        <UsageCount Value="71"/>
+      </Unit>
+      <Unit>
+        <Filename Value="model\model_nfe.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ModelNFe"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="696"/>
+        <CursorPos X="15" Y="722"/>
+        <UsageCount Value="34"/>
+        <Bookmarks Count="3">
+          <Item0 Y="131" ID="8"/>
+          <Item1 Y="600" ID="1"/>
+          <Item2 Y="649" ID="2"/>
+        </Bookmarks>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\lazarus\fpc\3.2.2\source\rtl\objpas\classes\classesh.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="2137"/>
+        <CursorPos X="76" Y="2150"/>
+        <UsageCount Value="5"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\Biblioteca\uJKDialog.pas"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="55" Y="14"/>
+        <UsageCount Value="5"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\Biblioteca\uformdialogs.pas"/>
+        <ComponentName Value="JKFormDialog"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uformDialogs"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="5"/>
+      </Unit>
+      <Unit>
+        <Filename Value="d:\Componentes\ACBR\Fontes\ACBrDiversos\ACBrValidador.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="24"/>
+        <CursorPos X="31" Y="51"/>
+        <UsageCount Value="4"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\lazarus\lcl\extctrls.pp"/>
+        <UnitName Value="ExtCtrls"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="14" Y="17"/>
+        <UsageCount Value="35"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\lazarus\lcl\stdctrls.pp"/>
+        <UnitName Value="StdCtrls"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="14" Y="18"/>
+        <UsageCount Value="35"/>
+      </Unit>
+      <Unit>
+        <Filename Value="d:\Componentes\ACBR\Fontes\ACBrTEFD\ACBrTEFDClass.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1120"/>
+        <CursorPos Y="1158"/>
+        <UsageCount Value="40"/>
+      </Unit>
+      <Unit>
+        <Filename Value="d:\Componentes\ACBR\Fontes\ACBrTEFD\ACBrTEFD.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1230"/>
+        <CursorPos Y="1255"/>
+        <UsageCount Value="27"/>
+      </Unit>
+      <Unit>
+        <Filename Value="d:\Componentes\ACBR\Fontes\ACBrSerial\ACBrDevice.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1131"/>
+        <CursorPos X="27" Y="1138"/>
+        <UsageCount Value="5"/>
+      </Unit>
+      <Unit>
+        <Filename Value="d:\Componentes\ACBR\Fontes\ACBrTEFD\ACBrTEFDPayGo.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="377"/>
+        <CursorPos Y="410"/>
+        <UsageCount Value="13"/>
+      </Unit>
+      <Unit>
+        <Filename Value="d:\Componentes\ACBR\Fontes\ACBrComum\ACBrUtil.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="287"/>
+        <CursorPos X="10" Y="313"/>
+        <UsageCount Value="12"/>
+      </Unit>
+      <Unit>
+        <Filename Value="d:\Componentes\ACBR\Fontes\ACBrDFe\ACBrNFe\PCNNFe\pcnNFe.pas"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="1232"/>
+        <CursorPos X="30" Y="1258"/>
+        <UsageCount Value="16"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="d:\Componentes\ACBR\Fontes\ACBrDFe\ACBrNFe\PCNNFe\pcnConversaoNFe.pas"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="83"/>
+        <CursorPos X="75" Y="109"/>
+        <UsageCount Value="16"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="d:\Componentes\ACBR\Fontes\PCNComum\pcnConversao.pas"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="56"/>
+        <CursorPos X="30" Y="82"/>
+        <UsageCount Value="12"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="d:\Componentes\ACBR\Fontes\ACBrDFe\ACBrDFeConfiguracoes.pas"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="13" Y="44"/>
+        <UsageCount Value="9"/>
+      </Unit>
+      <Unit>
+        <Filename Value="d:\Componentes\ACBR\Fontes\ACBrDFe\ACBrDFeSSL.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="439"/>
+        <CursorPos X="14" Y="464"/>
+        <UsageCount Value="9"/>
+      </Unit>
+      <Unit>
+        <Filename Value="d:\Componentes\ACBR\Fontes\Terceiros\synalist\blcksock.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="70"/>
+        <CursorPos X="14" Y="103"/>
+        <UsageCount Value="9"/>
       </Unit>
     </Units>
     <JumpHistory HistoryIndex="29">
       <Position>
-        <Filename Value="view\view_transporte.pas"/>
-        <Caret Line="70" Column="34" TopLine="53"/>
+        <Filename Value="model\model_nfe.pas"/>
+        <Caret Line="763" Column="57" TopLine="720"/>
       </Position>
       <Position>
-        <Filename Value="view\view_transporte.pas"/>
-        <Caret Line="159" Column="46" TopLine="158"/>
+        <Filename Value="model\model_nfe.pas"/>
+        <Caret Line="766" Column="57" TopLine="723"/>
       </Position>
       <Position>
-        <Filename Value="view\view_transporte.pas"/>
+        <Filename Value="model\model_nfe.pas"/>
+        <Caret Line="771" Column="59" TopLine="727"/>
       </Position>
       <Position>
-        <Filename Value="view\view_transporte.pas"/>
-        <Caret Line="64" Column="47" TopLine="52"/>
+        <Filename Value="model\model_nfe.pas"/>
+        <Caret Line="774" Column="57" TopLine="730"/>
       </Position>
       <Position>
-        <Filename Value="view\view_transporte.pas"/>
-        <Caret Line="157" Column="6" TopLine="154"/>
+        <Filename Value="model\model_nfe.pas"/>
+        <Caret Line="778" Column="58" TopLine="734"/>
       </Position>
       <Position>
-        <Filename Value="view\view_transporte.pas"/>
-        <Caret Line="63" Column="15" TopLine="39"/>
+        <Filename Value="model\model_nfe.pas"/>
+        <Caret Line="781" Column="57" TopLine="737"/>
       </Position>
       <Position>
-        <Filename Value="view\view_transporte.pas"/>
-        <Caret Line="139" Column="3" TopLine="133"/>
+        <Filename Value="model\model_nfe.pas"/>
+        <Caret Line="783" Column="57" TopLine="739"/>
       </Position>
       <Position>
-        <Filename Value="view\view_transporte.pas"/>
-        <Caret Line="64" Column="15" TopLine="38"/>
+        <Filename Value="model\model_nfe.pas"/>
+        <Caret Line="785" Column="57" TopLine="741"/>
       </Position>
       <Position>
-        <Filename Value="view\view_transporte.pas"/>
-        <Caret Line="163" TopLine="154"/>
+        <Filename Value="model\model_nfe.pas"/>
+        <Caret Line="787" Column="57" TopLine="743"/>
       </Position>
       <Position>
-        <Filename Value="view\view_transporte.pas"/>
-        <Caret Line="178" Column="62" TopLine="133"/>
+        <Filename Value="model\model_nfe.pas"/>
+        <Caret Line="789" Column="57" TopLine="745"/>
       </Position>
       <Position>
-        <Filename Value="view\view_cliente.pas"/>
-        <Caret Line="54" Column="40" TopLine="27"/>
+        <Filename Value="model\model_nfe.pas"/>
+        <Caret Line="792" Column="59" TopLine="748"/>
       </Position>
       <Position>
-        <Filename Value="view\view_cliente.pas"/>
-        <Caret Line="58" Column="86" TopLine="6"/>
+        <Filename Value="model\model_nfe.pas"/>
+        <Caret Line="795" Column="57" TopLine="752"/>
       </Position>
       <Position>
-        <Filename Value="view\view_cliente.pas"/>
-        <Caret Line="62" Column="112" TopLine="23"/>
+        <Filename Value="model\model_nfe.pas"/>
+        <Caret Line="796" Column="57" TopLine="752"/>
       </Position>
       <Position>
-        <Filename Value="view\view_cliente.pas"/>
-        <Caret Line="88" Column="3" TopLine="35"/>
+        <Filename Value="model\model_nfe.pas"/>
+        <Caret Line="797" Column="57" TopLine="754"/>
       </Position>
       <Position>
-        <Filename Value="view\view_cliente.pas"/>
-        <Caret Line="109" Column="70" TopLine="67"/>
+        <Filename Value="model\model_nfe.pas"/>
+        <Caret Line="799" Column="59" TopLine="755"/>
       </Position>
       <Position>
-        <Filename Value="view\view_cliente.pas"/>
-        <Caret Line="84" Column="49" TopLine="67"/>
+        <Filename Value="model\model_nfe.pas"/>
+        <Caret Line="802" Column="57" TopLine="758"/>
       </Position>
       <Position>
-        <Filename Value="view\view_cliente.pas"/>
+        <Filename Value="model\model_nfe.pas"/>
+        <Caret Line="805" Column="57" TopLine="761"/>
       </Position>
       <Position>
-        <Filename Value="model\model_cliente.pas"/>
-        <Caret Line="20" Column="114"/>
+        <Filename Value="model\model_nfe.pas"/>
+        <Caret Line="807" Column="57" TopLine="763"/>
       </Position>
       <Position>
-        <Filename Value="view\view_transporte.pas"/>
-        <Caret Line="142" Column="86" TopLine="133"/>
+        <Filename Value="model\model_nfe.pas"/>
+        <Caret Line="809" Column="57" TopLine="765"/>
       </Position>
       <Position>
-        <Filename Value="view\view_cliente.pas"/>
-        <Caret Line="91" Column="37" TopLine="80"/>
+        <Filename Value="model\model_nfe.pas"/>
+        <Caret Line="812" Column="57" TopLine="768"/>
       </Position>
       <Position>
-        <Filename Value="view\view_cliente.pas"/>
-        <Caret Line="128" Column="31" TopLine="101"/>
+        <Filename Value="model\model_nfe.pas"/>
+        <Caret Line="814" Column="57" TopLine="770"/>
       </Position>
       <Position>
-        <Filename Value="view\view_cliente.pas"/>
+        <Filename Value="model\model_nfe.pas"/>
+        <Caret Line="816" Column="57" TopLine="772"/>
       </Position>
       <Position>
-        <Filename Value="view\view_consulta_cliente.pas"/>
-        <Caret Line="35" Column="54"/>
+        <Filename Value="model\model_nfe.pas"/>
+        <Caret Line="819" Column="59" TopLine="775"/>
       </Position>
       <Position>
-        <Filename Value="view\view_opcoes.pas"/>
-        <Caret Line="96" Column="33" TopLine="80"/>
+        <Filename Value="model\model_nfe.pas"/>
+        <Caret Line="822" Column="57" TopLine="778"/>
       </Position>
       <Position>
-        <Filename Value="view\view_opcoes.pas"/>
+        <Filename Value="model\model_nfe.pas"/>
+        <Caret Line="825" Column="57" TopLine="781"/>
       </Position>
       <Position>
-        <Filename Value="view\view_opcoes.pas"/>
-        <Caret Line="58" Column="36" TopLine="10"/>
+        <Filename Value="model\model_nfe.pas"/>
+        <Caret Line="828" Column="57" TopLine="784"/>
       </Position>
       <Position>
-        <Filename Value="view\view_cliente.pas"/>
-        <Caret Line="122" Column="51" TopLine="81"/>
+        <Filename Value="model\model_nfe.pas"/>
+        <Caret Line="830" Column="57" TopLine="786"/>
       </Position>
       <Position>
-        <Filename Value="view\view_cliente.pas"/>
-        <Caret Line="107" Column="20" TopLine="81"/>
+        <Filename Value="model\model_nfe.pas"/>
+        <Caret Line="826" Column="89" TopLine="788"/>
       </Position>
       <Position>
-        <Filename Value="view\view_cliente.pas"/>
-        <Caret Line="9" Column="90"/>
+        <Filename Value="model\model_nfe.pas"/>
+        <Caret Line="765" Column="75" TopLine="729"/>
       </Position>
       <Position>
-        <Filename Value="view\view_cliente.pas"/>
-        <Caret Line="118" Column="45" TopLine="92"/>
+        <Filename Value="model\model_nfe.pas"/>
+        <Caret Line="770" Column="74" TopLine="739"/>
       </Position>
     </JumpHistory>
     <RunParams>
@@ -604,7 +732,21 @@
         <WatchScope Value="wpsLocal"/>
         <WatchKind Value="wpkWrite"/>
         <Source Value="view\view_consulta_fornecedor.pas"/>
-        <Line Value="41"/>
+        <Line Value="42"/>
+      </Item>
+      <Item>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="d:\Componentes\ACBR\Fontes\ACBrTEFD\ACBrTEFD.pas"/>
+        <Line Value="937"/>
+      </Item>
+      <Item>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="model\model_nfe.pas"/>
+        <Line Value="377"/>
       </Item>
     </BreakPoints>
   </Debugging>

@@ -22,6 +22,7 @@ type
     procedure BtnNFCeClick(Sender: TObject);
     procedure BtnNFeClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
+    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
   private
     FModelVenda: TModelDmVenda;
     procedure SetModelVenda(AValue: TModelDmVenda);
@@ -69,6 +70,15 @@ end;
 procedure TViewSerieNf.FormActivate(Sender: TObject);
 begin
   Self.Tag := 0;
+end;
+
+procedure TViewSerieNf.FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+begin
+  inherited;
+  If Key = VK_F2 then
+     BtnNFeClick(sender)
+  else If Key = VK_F3 then
+     BtnNFCeClick(sender);
 end;
 
 procedure TViewSerieNf.SetModelVenda(AValue: TModelDmVenda);

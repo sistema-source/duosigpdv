@@ -5,19 +5,22 @@ unit view_cliente;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls,   lib_cores,
-  StdCtrls, BCButtonFocus, view_pai, view_consulta_cliente, view_mensagem_carregar_dados,
-  model_cliente;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, lib_cores,
+  StdCtrls, ACBrEnterTab, BCButtonFocus, view_pai, view_consulta_cliente, util_teclas,
+  view_mensagem_carregar_dados,
+  model_cliente, model_venda;
 
 type
 
   { TViewCliente }
 
   TViewCliente = class(TViewPai)
+    ACBrEnterTab1: TACBrEnterTab;
     BtnOk: TBCButtonFocus;
     BtnPesquisarCliente: TBCButtonFocus;
     BtnVoltar: TBCButtonFocus;
-    EdCodMunicipio: TEdit;
+    EdtUf: TEdit;
+    EdtCodMunicipio: TEdit;
     EdtBairro: TEdit;
     EdtCepCliente: TEdit;
     EdtCnpjCpf: TEdit;
@@ -25,9 +28,8 @@ type
     EdtEndereco: TEdit;
     EdtNomeCliente: TEdit;
     EdtNomeMunicipio: TEdit;
-    EdtNumero: TEdit;
     EdtTelefone: TEdit;
-    EdtTelefone1: TEdit;
+    EdtEmail: TEdit;
     Label1: TLabel;
     LblVlrTotalVenda: TLabel;
     LblVlrTotalVenda1: TLabel;
@@ -46,23 +48,27 @@ type
     procedure BtnOkClick(Sender: TObject);
     procedure BtnPesquisarClienteClick(Sender: TObject);
     procedure BtnVoltarClick(Sender: TObject);
-    procedure FormCreate(Sender: TObject);
+    procedure EdtCodClienteEnter(Sender: TObject);
+    procedure EdtCodClienteExit(Sender: TObject);
+    procedure EdtCodClienteKeyDown(Sender: TObject; var Key: word; Shift: TShiftState);
+    procedure FormShow(Sender: TObject);
   private
     FModelCliente: TModelDmCliente;
+    FModelVenda: TModelDmVenda;
     FViewConsultaCliente: TViewConsultaCliente;
+    procedure LimparCampos;
     procedure SetModelCliente(AValue: TModelDmCliente);
+    procedure SetModelVenda(AValue: TModelDmVenda);
     procedure SetViewConsultaCliente(AValue: TViewConsultaCliente);
-
   public
-
-
 
     procedure ConfigurarComponentes; override;
 
-
+    property ModelVenda: TModelDmVenda read FModelVenda write SetModelVenda;
     property ModelCliente: TModelDmCliente read FModelCliente write SetModelCliente;
     property ViewConsultaCliente: TViewConsultaCliente
       read FViewConsultaCliente write SetViewConsultaCliente;
+
 
   end;
 
@@ -80,16 +86,79 @@ begin
   Close;
 end;
 
-procedure TViewCliente.FormCreate(Sender: TObject);
+procedure TViewCliente.EdtCodClienteEnter(Sender: TObject);
 begin
-  inherited;
+  EdtCodCliente.Clear;
+  LimparCampos;
+end;
+
+procedure TViewCliente.EdtCodClienteExit(Sender: TObject);
+var
+  LCnpj, LRazaoSocial, LCep, LEndereco, LBairro, LCodMunicipio, LMunicipio,
+  LUf, LTelefone, LEmail: string;
+begin
+  if EdtCodCliente.Text > '0' then
+  begin
+    if not FModelCliente.ObterDadosCliente(
+      StrToIntDef(EdtCodCliente.Text, 0), LCnpj, LRazaoSocial, LCep,
+      LEndereco, LBairro, LCodMunicipio, LMunicipio, LTelefone, LEmail, LUf) then
+    begin
+      EdtCodCliente.SetFocus;
+      raise Exception.Create('Cliente [' + EdtCodCliente.Text +
+        ' ] não esta cadastrado');
+    end;
+
+    EdtCnpjCpf.Text := LCnpj;
+    EdtNomeCliente.Text := LRazaoSocial;
+    EdtBairro.Text := LBairro;
+    EdtCepCliente.Text := LCep;
+    EdtEndereco.Text := LEndereco;
+    EdtNomeMunicipio.Text := LMunicipio;
+    EdtCodMunicipio.Text := LCodMunicipio;
+    EdtTelefone.Text := LTelefone;
+    EdtEmail.Text := LEmail;
+    EdtUf.Text := LUf;
+  end;
+
+end;
+
+procedure TViewCliente.EdtCodClienteKeyDown(Sender: TObject; var Key: word;
+  Shift: TShiftState);
+begin
+  if Key = VK_F7 then
+    BtnPesquisarClienteClick(Sender);
+end;
+
+procedure TViewCliente.FormShow(Sender: TObject);
+begin
   FModelCliente := TModelDmCliente.Create(Self);
+  FModelCliente.ModelConexaoFirebird := ModelConexaoFirebird;
+end;
+
+procedure TViewCliente.LimparCampos;
+begin
+  EdtNomeCliente.Clear;
+  EdtCnpjCpf.Clear;
+  EdtCepCliente.Clear;
+  EdtEndereco.Clear;
+  EdtBairro.Clear;
+  EdtCodMunicipio.Clear;
+  EdtNomeMunicipio.Clear;
+  EdtUf.Clear;
+  EdtTelefone.Clear;
+  EdtEmail.Clear;
 end;
 
 procedure TViewCliente.SetModelCliente(AValue: TModelDmCliente);
 begin
   if FModelCliente = AValue then Exit;
   FModelCliente := AValue;
+end;
+
+procedure TViewCliente.SetModelVenda(AValue: TModelDmVenda);
+begin
+  if FModelVenda = AValue then Exit;
+  FModelVenda := AValue;
 end;
 
 procedure TViewCliente.SetViewConsultaCliente(AValue: TViewConsultaCliente);
@@ -100,6 +169,15 @@ end;
 
 procedure TViewCliente.BtnOkClick(Sender: TObject);
 begin
+  if EdtCodCliente.Text > '0' then
+  begin
+    ModelVenda.CodCliente := StrToIntDef(EdtCodCliente.Text, 0);
+    ModelVenda.CnpjCpfCliente := EdtCnpjCpf.Text;
+  end
+  else
+  begin
+    raise Exception.Create('Cliente tem que estar cadastrado');
+  end;
   Close;
 end;
 
@@ -137,7 +215,11 @@ begin
       if FViewConsultaCliente.DtSrcConsulta.DataSet.RecordCount > 0 then
       begin
         EdtCodCliente.Text := FViewConsultaCliente.KeyPesquisa;
-        EdtCodCliente(Sender);
+        EdtCodClienteExit(Sender);
+      end
+      else
+      begin
+        EdtCodCliente.SetFocus;
       end;
     end;
   finally

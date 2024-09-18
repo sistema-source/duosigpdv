@@ -26,6 +26,7 @@ uses
   model_conexao_sqlite,
   model_produto,
   model_venda,
+  model_sessao,
   model_configuracao_pdv,
   lib_cores,
   lib_funcoes,
@@ -66,22 +67,20 @@ type
     FModelVenda: TModelDmVenda;
     FModelProduto: TModelDmProduto;
     FQtdProduto: currency;
-    FUsuario: string;
     FViewConsultaProduto: TViewConsultaProduto;
     FViewConsultaOrcamento: TViewConsultaOrcamento;
     FViewSerieNf: TViewSerieNf;
     procedure SetQtdProduto(AValue: currency);
-    procedure SetUsuario(AValue: string);
     procedure Teste;
     procedure InserirProduto;
     procedure CriarTabelas;
+
   protected
     procedure ConfigurarComponentes; override;
   public
     procedure AjustarQtdade;
     procedure MostrarMensagem(pMensagem: string);
 
-    property Usuario: string read FUsuario write SetUsuario;
     property QtdProduto: currency read FQtdProduto write SetQtdProduto;
   end;
 
@@ -113,7 +112,6 @@ end;
 
 procedure TViewPrincipal.FormCreate(Sender: TObject);
 begin
-  fUsuario := 'DUOTEC';
 
   ConfigurarComponentes;
 
@@ -132,6 +130,9 @@ begin
   FQtdProduto := 1;
 
   CriarTabelas;
+
+  TModelSessao.Usuario := 'DUOTEC';
+
 end;
 
 procedure TViewPrincipal.FormKeyDown(Sender: TObject; var Key: word; Shift: TShiftState);
@@ -183,7 +184,7 @@ end;
 procedure TViewPrincipal.FormShow(Sender: TObject);
 begin
   MostrarMensagem('CAIXA LIVRE');
-  ModelConfiguracaoPdv.CarregarDadosPadrao(FUsuario);
+  ModelConfiguracaoPdv.CarregarDadosPadrao(TModelSessao.Usuario);
 
 end;
 
@@ -257,7 +258,7 @@ begin
     f.DtSrcFormaPagto.DataSet := FModelVenda.QryFormaPagto;
     f.ModelVenda := FModelVenda;
     f.ModelConexaoFirebird := ModelConexaoFirebird;
-    f.PnlMensagem := PnlMensagem;
+    f.PnlMensagemVenda := PnlMsg;
     f.BorderStyle := bsNone;
     Blend(True);
     f.ShowModal;
@@ -316,13 +317,13 @@ begin
     Blend(True);
     v.BorderStyle := bsNone;
     v.ModelConexaoFirebird := ModelConexaoFirebird;
-    v.ModelVenda:= FModelVenda;
+    v.ModelVenda := FModelVenda;
+    v.PnlMensagem := PnlMensagem;
     V.ShowModal;
     Blend(False);
   finally
     FreeAndNil(V);
   end;
-
 end;
 
 procedure TViewPrincipal.Teste;
@@ -341,12 +342,6 @@ begin
   FQtdProduto := AValue;
 end;
 
-procedure TViewPrincipal.SetUsuario(AValue: string);
-begin
-  if FUsuario = AValue then Exit;
-  FUsuario := AValue;
-  ModelConexaoFirebird.Usuario := FUsuario;
-end;
 
 
 procedure TViewPrincipal.InserirProduto;

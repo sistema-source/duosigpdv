@@ -29,12 +29,14 @@ begin
   Result := '';
   Result := Result + '  CREATE TABLE FORMA_PAGTO ( ';
   Result := Result + ' ID CHAR(44) PRIMARY KEY,';
-  Result := Result + ' ID_CABECALHO CHAR(44)';
+  Result := Result + ' ID_CABECALHO CHAR(44), ';
   Result := Result + ' DESCRICAO_FORMA_PAGTO VarChar(30),';
   Result := Result + ' NOME_BANDEIRA VarChar(30),';
   Result := Result + ' COD_FORMA_PAGTO VarChar(2),';
   Result := Result + ' VLR_FORMA_PAGTO NUMERIC(15,2),   ';
   Result := Result + ' NUM_AUTORIZACAO VarChar(60) ';
+  Result := Result + ' DOC001 VarChar(4096) ';
+  Result := Result + ' DOC002 VarChar(4096) ';
   Result := Result + '  ); ';
 end;
 

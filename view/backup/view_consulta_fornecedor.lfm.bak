@@ -2,6 +2,7 @@ inherited ViewConsultaFornecedor: TViewConsultaFornecedor
   Height = 597
   ClientHeight = 597
   OnCreate = FormCreate
+  OnShow = FormShow
   inherited PnlBackGround: TPanel
     Height = 597
     ClientHeight = 597
@@ -10,12 +11,14 @@ inherited ViewConsultaFornecedor: TViewConsultaFornecedor
       ClientHeight = 579
       inherited PnlTopoConsulta: TPanel
         inherited CmbBxTipoPesquisa: TComboBox
+          ItemIndex = 0
           Items.Strings = (
             'Razão Social'
             'Cnpj/Cpf'
             'Código'
           )
           OnSelect = CmbBxTipoPesquisaSelect
+          Text = 'Razão Social'
         end
       end
       inherited Panel3: TPanel

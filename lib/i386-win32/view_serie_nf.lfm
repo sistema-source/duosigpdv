@@ -6,6 +6,7 @@ inherited ViewSerieNf: TViewSerieNf
   ClientHeight = 379
   ClientWidth = 403
   OnActivate = FormActivate
+  OnKeyDown = FormKeyDown
   Position = poOwnerFormCenter
   object PnlBackGround: TPanel[0]
     Left = 0
@@ -119,7 +120,7 @@ inherited ViewSerieNf: TViewSerieNf
         StateNormal.FontEx.ShadowOffsetX = 1
         StateNormal.FontEx.ShadowOffsetY = 1
         StateNormal.FontEx.Style = [fsBold]
-        Caption = 'NF Consumidor'
+        Caption = '[F2] NF Consumidor'
         Color = clNone
         DropDownWidth = 16
         DropDownArrowSize = 8
@@ -214,7 +215,7 @@ inherited ViewSerieNf: TViewSerieNf
         StateNormal.FontEx.ShadowOffsetX = 1
         StateNormal.FontEx.ShadowOffsetY = 1
         StateNormal.FontEx.Style = [fsBold]
-        Caption = 'NF Eletrônica'
+        Caption = '[F3] NF Eletrônica'
         Color = clNone
         DropDownWidth = 16
         DropDownArrowSize = 8
@@ -309,7 +310,7 @@ inherited ViewSerieNf: TViewSerieNf
         StateNormal.FontEx.ShadowOffsetX = 1
         StateNormal.FontEx.ShadowOffsetY = 1
         StateNormal.FontEx.Style = [fsBold]
-        Caption = 'Cancelar'
+        Caption = '[ESC] Cancelar'
         Color = clNone
         DropDownWidth = 16
         DropDownArrowSize = 8

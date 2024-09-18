@@ -91,8 +91,27 @@ begin
   pDtSrc.DataSet := QryPesquisa;
   QryPesquisa.Close;
   s := '';
-  s := s + 'select s034.codprd, s034.codbar, s034.codfbr, s034.dcrprd, ';
-  s := s + ' s035.vlrbasvda' + ' from sinaf034 s034 ';
+  s := s + ' select s034.codprd, ';
+  s := s + ' s034.codbar, ';
+  s := s + ' s034.codfbr, ';
+  s := s + ' s034.dcrprd, ';
+  s := s + ' s034.codundprd, ';
+  s := s + ' s035.vlrbasvda, ';
+  s := s + ' s035.codtpotrb, ';
+  s := s + ' s035.pertrb, ';
+  s := s + ' s034.codprc, ';
+  s := s + ' s035.pericm, ';
+  s := s + ' s034.cest, ';
+  s := s + ' s034.ncm, ';
+  s := s + ' s035.codtpotrbsimples, ';
+  s := S + ' s035.codtpotrbsimplesnaocontr,';
+  s := S + ' s034.codcodtpotrbsimplesnaocontr,';
+  s := s + ' s035.codtpotrbsimplesnaocontr,';
+  s := s + ' s034.codtpopis, ';
+  s := s + ' s034.codtpocofins, ';
+  s := s + ' s034.peralipisnfe, ';
+  s := s + ' s034.peralicofinsnfe ';
+  s := s + ' from sinaf034 s034 ';
   s := s + ' left join sinaf035 s035 on s034.codprd = s035.codprd and s035.empgrp = :pCod_Empresa and s035.codlja = :pCodLoja ';
   s := s + ' where s034.codprd = :pCodProduto ';
   QryPesquisa.SQL.Text := s;
@@ -120,12 +139,12 @@ begin
   LOrderBy := '';
   if pTipoPesquisa = 'Código' then
   begin
-    LWhere := LWhere + ' WHERE s034.codprd >= :pVlrPesquisa';
+    LWhere := LWhere + ' WHERE s034.codprd = :pVlrPesquisa';
     LOrderBy := LOrderBy + ' ORDER BY s034.codprd';
   end
   else if pTipoPesquisa = 'Código de Barra' then
   begin
-    LWhere := LWhere + ' WHERE s034.codbar >= :pVlrPesquisa';
+    LWhere := LWhere + ' WHERE s034.codbar = :pVlrPesquisa';
     LOrderBy := LOrderBy + ' ORDER BY s034.codbar ';
   end
   else if pTipoPesquisa = 'Descrição' then
